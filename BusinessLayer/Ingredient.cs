@@ -39,30 +39,27 @@ namespace BusinessLayer
                 throw new Exception(ex.Message);
             }
         }
-        public void setIngrdient(string id, int soLuong)
+        public bool setIngrdient(string id, int soLuong)
         {
             List<tb_Ingredient> list = GetAccountsFromTable("tb_Ingredient");
-            foreach(var i in list)
+            foreach (var i in list)
             {
-                if(i.ProductID.Trim() == id.Trim())
+                if (i.ProductID.Trim() == id.Trim())
                 {
-                    i.Number -= soLuong;
-                    //tb_Ingredient u = new tb_Ingredient()
-                    //{
-                    //    IngredientID = i.IngredientID,
-                    //    IngredientName=i.IngredientName,
-                    //    Number = i.Number,
-                    //    ProductID = i.ProductID,
-                    //    Note = i.Note,
-                    //};
-
-                    Update(i);
-                }
-                else
-                {
-
+                    if (i.Number >= soLuong) // Kiểm tra xem có đủ nguyên liệu không
+                    {
+                        i.Number -= soLuong;
+                        Update(i); // Cập nhật số lượng nguyên liệu
+                        return true; // Trả về true nếu đủ nguyên liệu
+                    }
+                    else
+                    {
+                        return false; // Trả về false nếu không đủ nguyên liệu
+                    }
                 }
             }
+            return false; // Trả về false nếu không tìm thấy sản phẩm trong danh sách nguyên liệu
         }
+
     }
 }

@@ -24,8 +24,7 @@ namespace GUI.USER.DatBan
             _table = new DiningTable();
             pnTable.Dock = DockStyle.Fill;
             pnTable.AutoScroll = true;
-            TimeOrde.dateNhan = dateNhan.Value;
-            TimeOrde.timeNhan = timeNhan.Value;
+           
             //LoadToView();
         }
         public void LoadToView()
@@ -160,7 +159,7 @@ namespace GUI.USER.DatBan
                             }
                         }
                     }
-
+                    //123
                     foreach (var u in userControls)
                     {
                         u.Click += (ui, ee) =>
@@ -176,8 +175,12 @@ namespace GUI.USER.DatBan
                                 MainViewCustomer mainViewCustomer = this.ParentForm as MainViewCustomer;
                                 if (mainViewCustomer != null)
                                 {
-                                    string date = timeNhan.Value.ToString()+ dateNhan.Value.ToString();
-                                    MessageBox.Show(date);
+                                    string time = timeNhan.Value.ToString("HH:mm"); // Lấy giờ và phút từ DateTimePicker1
+                                    string date = dateNhan.Value.ToString("dd/MM/yyyy"); // Lấy ngày, tháng và năm từ DateTimePicker2
+                                    string dateTimeString = time + " " + date; // Kết hợp giờ và phút với ngày, tháng và năm
+                                    TimeOrde.dateNhan = dateTimeString;
+
+                                     MessageBox.Show(dateTimeString);
                                     mainViewCustomer.ActivateButton(iconButton2, RGBColors.color2);
                                     mainViewCustomer.OpenChildForm(new OrderFood((ui as UserControl1).TableName));
                                 }

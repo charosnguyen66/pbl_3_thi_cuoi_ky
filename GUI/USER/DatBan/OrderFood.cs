@@ -194,6 +194,13 @@ namespace GUI.USER.DatBan
 
         public void AddProductToDataGridView(ucProduct product)
         {
+            // Kiểm tra xem có đủ nguyên liệu cho sản phẩm không
+            if (!_ingre.setIngrdient(product.id, 1))
+            {
+                MessageBox.Show($"Không đủ nguyên liệu cho sản phẩm {product.name}. Vui lòng chọn sản phẩm khác.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return; // Không thêm sản phẩm vào DataGridView nếu không đủ nguyên liệu
+            }
+
             bool productExists = false;
 
             // Duyệt qua các hàng trong DataGridView để kiểm tra xem sản phẩm đã tồn tại chưa
@@ -231,6 +238,7 @@ namespace GUI.USER.DatBan
                 }
             }
         }
+
 
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
@@ -354,18 +362,18 @@ namespace GUI.USER.DatBan
                 try
                 {
                     var newInvoice = new tb_Invoice
-                    {
+                    { 
                         InvoiceID = invoiceID,
                         CustomerID = UserSession.UserID,
                         OrderDate = DateTime.Now,
                         PaymentID = null,
-                        Status = null,
+                        Status = "Đã đặt",
+                        ReserveDate = TimeOrde.dateNhan,
                         TableID = tableNames[0].Trim(),
                     };
-                    if (tableNames.Length > 2)
-                    {
-                        newInvoice.Note = "Gộp các bàn " + _tableName;
-                    }
+                   
+                        newInvoice.Note =   _tableName;
+                    
                     _invoice.AddNew(newInvoice);
                     foreach (DataGridViewRow row in dgvSP.Rows)
                     {
@@ -390,7 +398,6 @@ namespace GUI.USER.DatBan
 
                         _invoice_Detail.AddNew(newDetail);
                         MessageBox.Show("Đặt món thành công, Cám ơn quý khách đã ủng hộ chúng tôi. Vui lòng xem thông tin để đến đúng giờ");
-
 
 
                     }
@@ -419,6 +426,11 @@ namespace GUI.USER.DatBan
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnMonAn_Paint(object sender, PaintEventArgs e)
         {
 
         }
