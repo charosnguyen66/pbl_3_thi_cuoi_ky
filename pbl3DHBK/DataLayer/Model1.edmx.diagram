@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="83d620ebcded439ea21856a4e545954a" Name="Diagram1">
+        <EntityTypeShape EntityType="PBL3Model.sysdiagram" Width="1.5" PointX="5.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.tb_Admin" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.tb_Category" Width="1.5" PointX="0.75" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.tb_Customer" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.tb_DiningTable" Width="1.5" PointX="0.75" PointY="14.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.tb_Employee" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.tb_Ingredient" Width="1.5" PointX="5.25" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.tb_Invoice" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.tb_Invoice_Detail" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.tb_OverTime" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.tb_Payment" Width="1.5" PointX="0.75" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.tb_Product" Width="1.5" PointX="3" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.tb_Rating" Width="1.5" PointX="5.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.tb_SickOff" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PBL3Model.tb_Wage" Width="1.5" PointX="3" PointY="13.25" IsExpanded="true" />
+        <AssociationConnector Association="PBL3Model.FK_Product_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_Invoice_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_Payment_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_tb_Rating_tb_Customer" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_Invoice_DiningTable" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_Invoice_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_tb_OverTime_tb_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_tb_SickOff_tb_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_tb_Wage_tb_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_tb_Ingredient_tb_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_Invoice_Detail_Invoice" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_Invoice_Payment" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_Invoice_Detail_Product" ManuallyRouted="false" />
+        <AssociationConnector Association="PBL3Model.FK_tb_Rating_tb_Product" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

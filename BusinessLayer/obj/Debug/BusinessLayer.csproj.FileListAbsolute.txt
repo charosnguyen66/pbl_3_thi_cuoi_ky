@@ -1,0 +1,32 @@
+H:\ki4\pbl3\PBL33\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+H:\ki4\pbl3\PBL33\BusinessLayer\bin\Debug\BusinessLayer.dll
+H:\ki4\pbl3\PBL33\BusinessLayer\bin\Debug\BusinessLayer.pdb
+H:\ki4\pbl3\PBL33\BusinessLayer\bin\Debug\DataLayer.dll
+H:\ki4\pbl3\PBL33\BusinessLayer\bin\Debug\EntityFramework.dll
+H:\ki4\pbl3\PBL33\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+H:\ki4\pbl3\PBL33\BusinessLayer\bin\Debug\DataLayer.pdb
+H:\ki4\pbl3\PBL33\BusinessLayer\bin\Debug\DataLayer.dll.config
+H:\ki4\pbl3\PBL33\BusinessLayer\bin\Debug\EntityFramework.xml
+H:\ki4\pbl3\PBL33\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+H:\ki4\pbl3\PBL33\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+H:\ki4\pbl3\PBL33\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+H:\ki4\pbl3\PBL33\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+H:\ki4\pbl3\PBL33\BusinessLayer\obj\Debug\BusinessLayer.dll
+H:\ki4\pbl3\PBL33\BusinessLayer\obj\Debug\BusinessLayer.pdb
+H:\ki4\pbl3\pbl33\BusinessLayer\bin\Debug\FontAwesome.Sharp.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\BusinessLayer.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\BusinessLayer.pdb
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\DataLayer.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\EntityFramework.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\FontAwesome.Sharp.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\DataLayer.pdb
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\DataLayer.dll.config
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\EntityFramework.xml
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.pdb

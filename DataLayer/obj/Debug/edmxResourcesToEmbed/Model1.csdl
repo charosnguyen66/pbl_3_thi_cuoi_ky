@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PBL3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tb_Admin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="40" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tb_Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CategoryName" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tb_Product" Relationship="Self.FK_Product_Category" FromRole="tb_Category" ToRole="tb_Product" />
+  </EntityType>
+  <EntityType Name="tb_Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="Boolean" />
+    <Property Name="Birthdate" Type="DateTime" Precision="0" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RewardPoints" Type="Int32" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="tb_Invoice" Relationship="Self.FK_Invoice_Customer" FromRole="tb_Customer" ToRole="tb_Invoice" />
+    <NavigationProperty Name="tb_Payment" Relationship="Self.FK_Payment_Customer" FromRole="tb_Customer" ToRole="tb_Payment" />
+    <NavigationProperty Name="tb_Rating" Relationship="Self.FK_tb_Rating_tb_Customer" FromRole="tb_Customer" ToRole="tb_Rating" />
+  </EntityType>
+  <EntityType Name="tb_DiningTable">
+    <Key>
+      <PropertyRef Name="TableID" />
+    </Key>
+    <Property Name="TableID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="NumberPerson" Type="Int32" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_Invoice" Relationship="Self.FK_Invoice_DiningTable" FromRole="tb_DiningTable" ToRole="tb_Invoice" />
+  </EntityType>
+  <EntityType Name="tb_Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Gender" Type="Boolean" />
+    <Property Name="BirthDate" Type="DateTime" Precision="0" />
+    <Property Name="TypeEmployee" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="image" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_OverTime" Relationship="Self.FK_tb_OverTime_tb_Employee" FromRole="tb_Employee" ToRole="tb_OverTime" />
+    <NavigationProperty Name="tb_SickOff" Relationship="Self.FK_tb_SickOff_tb_Employee" FromRole="tb_Employee" ToRole="tb_SickOff" />
+    <NavigationProperty Name="tb_Wage" Relationship="Self.FK_tb_Wage_tb_Employee" FromRole="tb_Employee" ToRole="tb_Wage" />
+  </EntityType>
+  <EntityType Name="tb_Ingredient">
+    <Key>
+      <PropertyRef Name="IngredientID" />
+    </Key>
+    <Property Name="IngredientID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="IngredientName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="Int32" />
+    <Property Name="ProductID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tb_Product" Relationship="Self.FK_tb_Ingredient_tb_Product" FromRole="tb_Ingredient" ToRole="tb_Product" />
+  </EntityType>
+  <EntityType Name="tb_Invoice">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="CustomerID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="OrderDate" Type="DateTime" Precision="0" />
+    <Property Name="PaymentID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Note" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TableID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="ReserveDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tb_Customer" Relationship="Self.FK_Invoice_Customer" FromRole="tb_Invoice" ToRole="tb_Customer" />
+    <NavigationProperty Name="tb_DiningTable" Relationship="Self.FK_Invoice_DiningTable" FromRole="tb_Invoice" ToRole="tb_DiningTable" />
+    <NavigationProperty Name="tb_Invoice_Detail" Relationship="Self.FK_Invoice_Detail_Invoice" FromRole="tb_Invoice" ToRole="tb_Invoice_Detail" />
+    <NavigationProperty Name="tb_Payment" Relationship="Self.FK_Invoice_Payment" FromRole="tb_Invoice" ToRole="tb_Payment" />
+  </EntityType>
+  <EntityType Name="tb_Invoice_Detail">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="InvoiceID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ProductID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="Quanlity" Type="Int32" />
+    <Property Name="Discount" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="tb_Invoice" Relationship="Self.FK_Invoice_Detail_Invoice" FromRole="tb_Invoice_Detail" ToRole="tb_Invoice" />
+    <NavigationProperty Name="tb_Product" Relationship="Self.FK_Invoice_Detail_Product" FromRole="tb_Invoice_Detail" ToRole="tb_Product" />
+  </EntityType>
+  <EntityType Name="tb_OverTime">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="OvertimeDate" Type="DateTime" Precision="0" />
+    <Property Name="OvertimeHours" Type="Int32" />
+    <Property Name="EmployeeID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="coeffSalary" Type="Double" />
+    <NavigationProperty Name="tb_Employee" Relationship="Self.FK_tb_OverTime_tb_Employee" FromRole="tb_OverTime" ToRole="tb_Employee" />
+  </EntityType>
+  <EntityType Name="tb_Payment">
+    <Key>
+      <PropertyRef Name="PaymentID" />
+    </Key>
+    <Property Name="PaymentID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tb_Customer" Relationship="Self.FK_Payment_Customer" FromRole="tb_Payment" ToRole="tb_Customer" />
+    <NavigationProperty Name="tb_Invoice" Relationship="Self.FK_Invoice_Payment" FromRole="tb_Payment" ToRole="tb_Invoice" />
+  </EntityType>
+  <EntityType Name="tb_Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Price" Type="Double" />
+    <Property Name="AddedDate" Type="DateTime" Precision="0" />
+    <Property Name="DeleteDate" Type="DateTime" Precision="0" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryID" Type="String" MaxLength="20" FixedLength="true" Unicode="true" />
+    <Property Name="ImageProduct" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <NavigationProperty Name="tb_Category" Relationship="Self.FK_Product_Category" FromRole="tb_Product" ToRole="tb_Category" />
+    <NavigationProperty Name="tb_Ingredient" Relationship="Self.FK_tb_Ingredient_tb_Product" FromRole="tb_Product" ToRole="tb_Ingredient" />
+    <NavigationProperty Name="tb_Invoice_Detail" Relationship="Self.FK_Invoice_Detail_Product" FromRole="tb_Product" ToRole="tb_Invoice_Detail" />
+    <NavigationProperty Name="tb_Rating" Relationship="Self.FK_tb_Rating_tb_Product" FromRole="tb_Product" ToRole="tb_Rating" />
+  </EntityType>
+  <EntityType Name="tb_Rating">
+    <Key>
+      <PropertyRef Name="reviewID" />
+    </Key>
+    <Property Name="reviewID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="contentDetail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="rating" Type="Int32" />
+    <Property Name="customerID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="productID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="timeReview" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tb_Customer" Relationship="Self.FK_tb_Rating_tb_Customer" FromRole="tb_Rating" ToRole="tb_Customer" />
+    <NavigationProperty Name="tb_Product" Relationship="Self.FK_tb_Rating_tb_Product" FromRole="tb_Rating" ToRole="tb_Product" />
+  </EntityType>
+  <EntityType Name="tb_SickOff">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="EmployeeID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="SickDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tb_Employee" Relationship="Self.FK_tb_SickOff_tb_Employee" FromRole="tb_SickOff" ToRole="tb_Employee" />
+  </EntityType>
+  <EntityType Name="tb_Wage">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TimeStart" Type="DateTime" Precision="0" />
+    <Property Name="TimeEnd" Type="DateTime" Precision="0" />
+    <Property Name="WorkingTime" Type="Int32" />
+    <Property Name="Wage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="tb_Employee" Relationship="Self.FK_tb_Wage_tb_Employee" FromRole="tb_Wage" ToRole="tb_Employee" />
+  </EntityType>
+  <Association Name="FK_Product_Category">
+    <End Role="tb_Category" Type="Self.tb_Category" Multiplicity="0..1" />
+    <End Role="tb_Product" Type="Self.tb_Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Category">
+        <PropertyRef Name="CategoryID" />
+      </Principal>
+      <Dependent Role="tb_Product">
+        <PropertyRef Name="CategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Customer">
+    <End Role="tb_Customer" Type="Self.tb_Customer" Multiplicity="0..1" />
+    <End Role="tb_Invoice" Type="Self.tb_Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="tb_Invoice">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Payment_Customer">
+    <End Role="tb_Customer" Type="Self.tb_Customer" Multiplicity="0..1" />
+    <End Role="tb_Payment" Type="Self.tb_Payment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="tb_Payment">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_Rating_tb_Customer">
+    <End Role="tb_Customer" Type="Self.tb_Customer" Multiplicity="0..1" />
+    <End Role="tb_Rating" Type="Self.tb_Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Customer">
+        <PropertyRef Name="CustomerID" />
+      </Principal>
+      <Dependent Role="tb_Rating">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_DiningTable">
+    <End Role="tb_DiningTable" Type="Self.tb_DiningTable" Multiplicity="0..1" />
+    <End Role="tb_Invoice" Type="Self.tb_Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_DiningTable">
+        <PropertyRef Name="TableID" />
+      </Principal>
+      <Dependent Role="tb_Invoice">
+        <PropertyRef Name="TableID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_OverTime_tb_Employee">
+    <End Role="tb_Employee" Type="Self.tb_Employee" Multiplicity="0..1" />
+    <End Role="tb_OverTime" Type="Self.tb_OverTime" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="tb_OverTime">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_SickOff_tb_Employee">
+    <End Role="tb_Employee" Type="Self.tb_Employee" Multiplicity="1" />
+    <End Role="tb_SickOff" Type="Self.tb_SickOff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="tb_SickOff">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_Wage_tb_Employee">
+    <End Role="tb_Employee" Type="Self.tb_Employee" Multiplicity="1" />
+    <End Role="tb_Wage" Type="Self.tb_Wage" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Employee">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="tb_Wage">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_Ingredient_tb_Product">
+    <End Role="tb_Product" Type="Self.tb_Product" Multiplicity="0..1" />
+    <End Role="tb_Ingredient" Type="Self.tb_Ingredient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tb_Ingredient">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Detail_Invoice">
+    <End Role="tb_Invoice" Type="Self.tb_Invoice" Multiplicity="1" />
+    <End Role="tb_Invoice_Detail" Type="Self.tb_Invoice_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Invoice">
+        <PropertyRef Name="InvoiceID" />
+      </Principal>
+      <Dependent Role="tb_Invoice_Detail">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Payment">
+    <End Role="tb_Payment" Type="Self.tb_Payment" Multiplicity="0..1" />
+    <End Role="tb_Invoice" Type="Self.tb_Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Payment">
+        <PropertyRef Name="PaymentID" />
+      </Principal>
+      <Dependent Role="tb_Invoice">
+        <PropertyRef Name="PaymentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Detail_Product">
+    <End Role="tb_Product" Type="Self.tb_Product" Multiplicity="1" />
+    <End Role="tb_Invoice_Detail" Type="Self.tb_Invoice_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tb_Invoice_Detail">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tb_Rating_tb_Product">
+    <End Role="tb_Product" Type="Self.tb_Product" Multiplicity="0..1" />
+    <End Role="tb_Rating" Type="Self.tb_Rating" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="tb_Rating">
+        <PropertyRef Name="productID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PBL3Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tb_Admin" EntityType="Self.tb_Admin" />
+    <EntitySet Name="tb_Category" EntityType="Self.tb_Category" />
+    <EntitySet Name="tb_Customer" EntityType="Self.tb_Customer" />
+    <EntitySet Name="tb_DiningTable" EntityType="Self.tb_DiningTable" />
+    <EntitySet Name="tb_Employee" EntityType="Self.tb_Employee" />
+    <EntitySet Name="tb_Ingredient" EntityType="Self.tb_Ingredient" />
+    <EntitySet Name="tb_Invoice" EntityType="Self.tb_Invoice" />
+    <EntitySet Name="tb_Invoice_Detail" EntityType="Self.tb_Invoice_Detail" />
+    <EntitySet Name="tb_OverTime" EntityType="Self.tb_OverTime" />
+    <EntitySet Name="tb_Payment" EntityType="Self.tb_Payment" />
+    <EntitySet Name="tb_Product" EntityType="Self.tb_Product" />
+    <EntitySet Name="tb_Rating" EntityType="Self.tb_Rating" />
+    <EntitySet Name="tb_SickOff" EntityType="Self.tb_SickOff" />
+    <EntitySet Name="tb_Wage" EntityType="Self.tb_Wage" />
+    <AssociationSet Name="FK_Product_Category" Association="Self.FK_Product_Category">
+      <End Role="tb_Category" EntitySet="tb_Category" />
+      <End Role="tb_Product" EntitySet="tb_Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Customer" Association="Self.FK_Invoice_Customer">
+      <End Role="tb_Customer" EntitySet="tb_Customer" />
+      <End Role="tb_Invoice" EntitySet="tb_Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Payment_Customer" Association="Self.FK_Payment_Customer">
+      <End Role="tb_Customer" EntitySet="tb_Customer" />
+      <End Role="tb_Payment" EntitySet="tb_Payment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_Rating_tb_Customer" Association="Self.FK_tb_Rating_tb_Customer">
+      <End Role="tb_Customer" EntitySet="tb_Customer" />
+      <End Role="tb_Rating" EntitySet="tb_Rating" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_DiningTable" Association="Self.FK_Invoice_DiningTable">
+      <End Role="tb_DiningTable" EntitySet="tb_DiningTable" />
+      <End Role="tb_Invoice" EntitySet="tb_Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_OverTime_tb_Employee" Association="Self.FK_tb_OverTime_tb_Employee">
+      <End Role="tb_Employee" EntitySet="tb_Employee" />
+      <End Role="tb_OverTime" EntitySet="tb_OverTime" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_SickOff_tb_Employee" Association="Self.FK_tb_SickOff_tb_Employee">
+      <End Role="tb_Employee" EntitySet="tb_Employee" />
+      <End Role="tb_SickOff" EntitySet="tb_SickOff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_Wage_tb_Employee" Association="Self.FK_tb_Wage_tb_Employee">
+      <End Role="tb_Employee" EntitySet="tb_Employee" />
+      <End Role="tb_Wage" EntitySet="tb_Wage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_Ingredient_tb_Product" Association="Self.FK_tb_Ingredient_tb_Product">
+      <End Role="tb_Product" EntitySet="tb_Product" />
+      <End Role="tb_Ingredient" EntitySet="tb_Ingredient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Detail_Invoice" Association="Self.FK_Invoice_Detail_Invoice">
+      <End Role="tb_Invoice" EntitySet="tb_Invoice" />
+      <End Role="tb_Invoice_Detail" EntitySet="tb_Invoice_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Payment" Association="Self.FK_Invoice_Payment">
+      <End Role="tb_Payment" EntitySet="tb_Payment" />
+      <End Role="tb_Invoice" EntitySet="tb_Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Detail_Product" Association="Self.FK_Invoice_Detail_Product">
+      <End Role="tb_Product" EntitySet="tb_Product" />
+      <End Role="tb_Invoice_Detail" EntitySet="tb_Invoice_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tb_Rating_tb_Product" Association="Self.FK_tb_Rating_tb_Product">
+      <End Role="tb_Product" EntitySet="tb_Product" />
+      <End Role="tb_Rating" EntitySet="tb_Rating" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

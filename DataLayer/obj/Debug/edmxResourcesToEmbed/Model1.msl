@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PBL3ModelStoreContainer" CdmEntityContainer="PBL3Entities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="PBL3Model.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Admin">
+      <EntityTypeMapping TypeName="PBL3Model.tb_Admin">
+        <MappingFragment StoreEntitySet="tb_Admin">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Category">
+      <EntityTypeMapping TypeName="PBL3Model.tb_Category">
+        <MappingFragment StoreEntitySet="tb_Category">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Customer">
+      <EntityTypeMapping TypeName="PBL3Model.tb_Customer">
+        <MappingFragment StoreEntitySet="tb_Customer">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="RewardPoints" ColumnName="RewardPoints" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="image" ColumnName="image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_DiningTable">
+      <EntityTypeMapping TypeName="PBL3Model.tb_DiningTable">
+        <MappingFragment StoreEntitySet="tb_DiningTable">
+          <ScalarProperty Name="TableID" ColumnName="TableID" />
+          <ScalarProperty Name="NumberPerson" ColumnName="NumberPerson" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Employee">
+      <EntityTypeMapping TypeName="PBL3Model.tb_Employee">
+        <MappingFragment StoreEntitySet="tb_Employee">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="TypeEmployee" ColumnName="TypeEmployee" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Ingredient">
+      <EntityTypeMapping TypeName="PBL3Model.tb_Ingredient">
+        <MappingFragment StoreEntitySet="tb_Ingredient">
+          <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
+          <ScalarProperty Name="IngredientName" ColumnName="IngredientName" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Invoice">
+      <EntityTypeMapping TypeName="PBL3Model.tb_Invoice">
+        <MappingFragment StoreEntitySet="tb_Invoice">
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="TableID" ColumnName="TableID" />
+          <ScalarProperty Name="ReserveDate" ColumnName="ReserveDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Invoice_Detail">
+      <EntityTypeMapping TypeName="PBL3Model.tb_Invoice_Detail">
+        <MappingFragment StoreEntitySet="tb_Invoice_Detail">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Quanlity" ColumnName="Quanlity" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_OverTime">
+      <EntityTypeMapping TypeName="PBL3Model.tb_OverTime">
+        <MappingFragment StoreEntitySet="tb_OverTime">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OvertimeDate" ColumnName="OvertimeDate" />
+          <ScalarProperty Name="OvertimeHours" ColumnName="OvertimeHours" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="coeffSalary" ColumnName="coeffSalary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Payment">
+      <EntityTypeMapping TypeName="PBL3Model.tb_Payment">
+        <MappingFragment StoreEntitySet="tb_Payment">
+          <ScalarProperty Name="PaymentID" ColumnName="PaymentID" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Product">
+      <EntityTypeMapping TypeName="PBL3Model.tb_Product">
+        <MappingFragment StoreEntitySet="tb_Product">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="AddedDate" ColumnName="AddedDate" />
+          <ScalarProperty Name="DeleteDate" ColumnName="DeleteDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="ImageProduct" ColumnName="ImageProduct" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Rating">
+      <EntityTypeMapping TypeName="PBL3Model.tb_Rating">
+        <MappingFragment StoreEntitySet="tb_Rating">
+          <ScalarProperty Name="reviewID" ColumnName="reviewID" />
+          <ScalarProperty Name="contentDetail" ColumnName="contentDetail" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+          <ScalarProperty Name="customerID" ColumnName="customerID" />
+          <ScalarProperty Name="productID" ColumnName="productID" />
+          <ScalarProperty Name="timeReview" ColumnName="timeReview" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_SickOff">
+      <EntityTypeMapping TypeName="PBL3Model.tb_SickOff">
+        <MappingFragment StoreEntitySet="tb_SickOff">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="SickDate" ColumnName="SickDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Wage">
+      <EntityTypeMapping TypeName="PBL3Model.tb_Wage">
+        <MappingFragment StoreEntitySet="tb_Wage">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
+          <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
+          <ScalarProperty Name="WorkingTime" ColumnName="WorkingTime" />
+          <ScalarProperty Name="Wage" ColumnName="Wage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

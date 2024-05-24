@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D2183D8-5058-41EC-B283-7ACA05AB8D1A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GUI</RootNamespace>
+    <AssemblyName>GUI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Drawing.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v23.2.Core, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v23.2, Version=23.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  
+    <Compile Include="Admin\KhachHang\ChinhSuaKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\KhachHang\ChinhSuaKH.Designer.cs">
+      <DependentUpon>ChinhSuaKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\KhachHang\HistoryInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\KhachHang\HistoryInvoice.Designer.cs">
+      <DependentUpon>HistoryInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\KhachHang\InvoiceDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\KhachHang\InvoiceDetail.Designer.cs">
+      <DependentUpon>InvoiceDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\KhachHang\ThemMoiKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\KhachHang\ThemMoiKH.Designer.cs">
+      <DependentUpon>ThemMoiKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Nhanvien\ChinhSuaNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Nhanvien\ChinhSuaNV.Designer.cs">
+      <DependentUpon>ChinhSuaNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Nhanvien\SalaryDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Nhanvien\SalaryDetailForm.Designer.cs">
+      <DependentUpon>SalaryDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Nhanvien\Them.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Nhanvien\Them.Designer.cs">
+      <DependentUpon>Them.cs</DependentUpon>
+    </Compile>
+
+    <Compile Include="EMPLOYEE\TaiKhoanNhanVien\accountNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMPLOYEE\TaiKhoanNhanVien\accountNV.Designer.cs">
+      <DependentUpon>accountNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\MainViewAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\MainViewAdmin.Designer.cs">
+      <DependentUpon>MainViewAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USER\DatBan\OrderFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USER\DatBan\OrderFood.Designer.cs">
+      <DependentUpon>OrderFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USER\DatBan\OrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USER\DatBan\OrderForm.Designer.cs">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USER\DatBan\ucProduct.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USER\DatBan\ucProduct.Designer.cs">
+      <DependentUpon>ucProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USER\DatBan\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="USER\DatBan\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USER\DatBan\UserSession.cs" />
+    <Compile Include="USER\LichSuDat\detailHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USER\LichSuDat\detailHistory.Designer.cs">
+      <DependentUpon>detailHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USER\LichSuDat\HistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USER\LichSuDat\HistoryForm.Designer.cs">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USER\MainViewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USER\MainViewCustomer.Designer.cs">
+      <DependentUpon>MainViewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYEE\MainViewEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMPLOYEE\MainViewEmployee.Designer.cs">
+      <DependentUpon>MainViewEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\KhachHang\ManageCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\KhachHang\ManageCustomer.Designer.cs">
+      <DependentUpon>ManageCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Nhanvien\ManageEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Nhanvien\ManageEmployee.Designer.cs">
+      <DependentUpon>ManageEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ManageIngredient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ManageIngredient.Designer.cs">
+      <DependentUpon>ManageIngredient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\THUCDON\ChinhSua.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\THUCDON\ChinhSua.Designer.cs">
+      <DependentUpon>ChinhSua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\THUCDON\ManageMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\THUCDON\ManageMenu.Designer.cs">
+      <DependentUpon>ManageMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\THUCDON\ManageStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\THUCDON\ManageStatistic.Designer.cs">
+      <DependentUpon>ManageStatistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mdProperties.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrationForm.Designer.cs">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\THUCDON\ThemMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\THUCDON\ThemMoi.Designer.cs">
+      <DependentUpon>ThemMoi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USER\TaiKhoan\AccountForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USER\TaiKhoan\AccountForm1.Designer.cs">
+      <DependentUpon>AccountForm1.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Admin\KhachHang\ChinhSuaKH.resx">
+      <DependentUpon>ChinhSuaKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\KhachHang\HistoryInvoice.resx">
+      <DependentUpon>HistoryInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\KhachHang\InvoiceDetail.resx">
+      <DependentUpon>InvoiceDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\KhachHang\ThemMoiKH.resx">
+      <DependentUpon>ThemMoiKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Nhanvien\ChinhSuaNV.resx">
+      <DependentUpon>ChinhSuaNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Nhanvien\SalaryDetailForm.resx">
+      <DependentUpon>SalaryDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Nhanvien\Them.resx">
+      <DependentUpon>Them.cs</DependentUpon>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="EMPLOYEE\ManageTable\quanlydatban.resx">
+      <DependentUpon>quanlydatban.cs</DependentUpon>
+>>>>>>> f75a0c36914b14e930f965dafc9dc71fd955fb7d
+>>>>>>> a8e7106294ae53ace33d87a633f1b01830bd5bd3
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMPLOYEE\TaiKhoanNhanVien\accountNV.resx">
+      <DependentUpon>accountNV.cs</DependentUpon>
+    </EmbeddedResource>
+
+    <EmbeddedResource Include="EMPLOYEE\tinhluong\tinhluong.resx">
+      <DependentUpon>tinhluong.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> f75a0c36914b14e930f965dafc9dc71fd955fb7d
+>>>>>>> a8e7106294ae53ace33d87a633f1b01830bd5bd3
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\MainViewAdmin.resx">
+      <DependentUpon>MainViewAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMPLOYEE\MainViewEmployee.resx">
+      <DependentUpon>MainViewEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\KhachHang\ManageCustomer.resx">
+      <DependentUpon>ManageCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Nhanvien\ManageEmployee.resx">
+      <DependentUpon>ManageEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ManageIngredient.resx">
+      <DependentUpon>ManageIngredient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\THUCDON\ChinhSua.resx">
+      <DependentUpon>ChinhSua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\THUCDON\ManageMenu.resx">
+      <DependentUpon>ManageMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\THUCDON\ManageStatistic.resx">
+      <DependentUpon>ManageStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RegistrationForm.resx">
+      <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\THUCDON\ThemMoi.resx">
+      <DependentUpon>ThemMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER\DatBan\OrderFood.resx">
+      <DependentUpon>OrderFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER\DatBan\OrderForm.resx">
+      <DependentUpon>OrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER\DatBan\ucProduct.resx">
+      <DependentUpon>ucProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER\DatBan\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER\LichSuDat\detailHistory.resx">
+      <DependentUpon>detailHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER\LichSuDat\HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER\MainViewCustomer.resx">
+      <DependentUpon>MainViewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="USER\TaiKhoan\AccountForm1.resx">
+      <DependentUpon>AccountForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj">
+      <Project>{e3b6af7a-782d-44e3-b47b-ede54251d48c}</Project>
+      <Name>BusinessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj">
+      <Project>{7767071d-0ec1-437d-b894-9eb280fc29dc}</Project>
+      <Name>DataLayer</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-menu-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\thongke\" />
+
+    <Folder Include="EMPLOYEE\payroll\" />
+=======
+>>>>>>> f75a0c36914b14e930f965dafc9dc71fd955fb7d
+>>>>>>> 9a57a3580d17c733d49d4400b36583cbb73a71a3
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

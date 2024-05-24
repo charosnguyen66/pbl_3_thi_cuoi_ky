@@ -1,0 +1,26 @@
+H:\ki4\pbl3\pbl33\DataLayer\bin\Debug\DataLayer.dll.config
+H:\ki4\pbl3\pbl33\DataLayer\bin\Debug\DataLayer.dll
+H:\ki4\pbl3\pbl33\DataLayer\bin\Debug\DataLayer.pdb
+H:\ki4\pbl3\pbl33\DataLayer\bin\Debug\EntityFramework.dll
+H:\ki4\pbl3\pbl33\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+H:\ki4\pbl3\pbl33\DataLayer\bin\Debug\EntityFramework.xml
+H:\ki4\pbl3\pbl33\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+H:\ki4\pbl3\pbl33\DataLayer\obj\Debug\DataLayer.csproj.AssemblyReference.cache
+H:\ki4\pbl3\pbl33\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+H:\ki4\pbl3\pbl33\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
+H:\ki4\pbl3\pbl33\DataLayer\obj\Debug\DataLayer.dll
+H:\ki4\pbl3\pbl33\DataLayer\obj\Debug\DataLayer.pdb
+H:\ki4\pbl3\pbl33\DataLayer\bin\Debug\FontAwesome.Sharp.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\DataLayer.dll.config
+H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\DataLayer.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\DataLayer.pdb
+H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\EntityFramework.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\FontAwesome.Sharp.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\EntityFramework.xml
+H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\obj\Debug\DataLayer.csproj.AssemblyReference.cache
+H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
+H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\obj\Debug\DataLayer.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\obj\Debug\DataLayer.pdb
