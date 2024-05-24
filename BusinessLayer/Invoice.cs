@@ -149,15 +149,30 @@ namespace BusinessLayer
         {
             try
             {
-                var _dt = db.tb_Invoice.FirstOrDefault(x => x.InvoiceID == id);
-                db.tb_Invoice.Remove(_dt);
-                db.SaveChanges();
+                // Tìm kiếm hóa đơn trong bảng tb_Invoice
+                var invoice = db.tb_Invoice.FirstOrDefault(x => x.InvoiceID.Trim() == id);
 
+                if (invoice != null)
+                {
+                    var invoiceDetails = db.tb_Invoice_Detail.Where(x => x.InvoiceID == id).ToList();
+
+                    db.tb_Invoice_Detail.RemoveRange(invoiceDetails);
+
+                    db.tb_Invoice.Remove(invoice);
+
+                    // Lưu các thay đổi vào cơ sở dữ liệu
+                    db.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Hóa đơn không tồn tại.");
+                }
             }
             catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
         }
+
     }
 }
