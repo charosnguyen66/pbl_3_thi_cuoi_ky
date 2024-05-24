@@ -46,5 +46,24 @@ namespace GUI.USER.LichSuDat
                 detailForm.Show();
             }
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null)
+            {
+                string selectedInvoiceID = dataGridView1.CurrentRow.Cells["InvoiceID"].Value.ToString();
+
+                try
+                {
+                    _invoice.Delete(selectedInvoiceID);
+                    MessageBox.Show("Hóa đơn đã được hủy thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Đã xảy ra lỗi khi hủy hóa đơn: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                LoadToView();
+            }
+        }
     }
 }

@@ -8,8 +8,7 @@ namespace GUI.USER
 {
     public static class TimeOrde
     {
-        public static DateTime dateNhan { get; set; }
-        public static DateTime timeNhan { get; set; }
+        public static string dateNhan { get; set; }
 
     }
 }

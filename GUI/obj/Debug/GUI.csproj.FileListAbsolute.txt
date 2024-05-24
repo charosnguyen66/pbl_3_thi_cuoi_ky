@@ -97,3 +97,4 @@ H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.csproj.CopyComplete
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.exe
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.pdb
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.EMPLOYEE.ManageTable.updateInvoice.resources
+H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.EMPLOYEE.ManageTable.ucItem.resources

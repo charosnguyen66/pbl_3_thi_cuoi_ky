@@ -117,6 +117,12 @@
     <Compile Include="EMPLOYEE\ManageTable\ManageTable.Designer.cs">
       <DependentUpon>ManageTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="EMPLOYEE\ManageTable\ucItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EMPLOYEE\ManageTable\ucItem.Designer.cs">
+      <DependentUpon>ucItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="EMPLOYEE\ManageTable\updateInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EMPLOYEE\ManageTable\ManageTable.resx">
       <DependentUpon>ManageTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMPLOYEE\ManageTable\ucItem.resx">
+      <DependentUpon>ucItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EMPLOYEE\ManageTable\updateInvoice.resx">
       <DependentUpon>updateInvoice.cs</DependentUpon>
