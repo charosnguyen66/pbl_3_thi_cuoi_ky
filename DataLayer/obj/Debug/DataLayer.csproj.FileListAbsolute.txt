@@ -24,3 +24,16 @@ H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInp
 H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\obj\Debug\DataLayer.dll
 H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\obj\Debug\DataLayer.pdb
+F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\bin\Debug\DataLayer.dll.config
+F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\bin\Debug\DataLayer.dll
+F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\bin\Debug\DataLayer.pdb
+F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\bin\Debug\EntityFramework.dll
+F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\bin\Debug\FontAwesome.Sharp.dll
+F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\bin\Debug\EntityFramework.xml
+F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\obj\Debug\DataLayer.csproj.AssemblyReference.cache
+F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\obj\Debug\DataLayer.csproj.Up2Date
+F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\obj\Debug\DataLayer.dll
+F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\obj\Debug\DataLayer.pdb
