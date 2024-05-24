@@ -160,7 +160,7 @@ namespace GUI.USER.DatBan
                             }
                         }
                     }
-
+                    //123
                     foreach (var u in userControls)
                     {
                         u.Click += (ui, ee) =>
