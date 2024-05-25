@@ -20,6 +20,7 @@ using BusinessLayer;
 using DataLayer;
 using GUI.EMPLOYEE.ManageTable;
 using GUI.EMPLOYEE.TaiKhoanNhanVien;
+using GUI.EMPLOYEE.tinhluongnhanvien;
 namespace GUI
 {
     public partial class MainViewEmployee : Form
@@ -102,7 +103,7 @@ namespace GUI
         private void iconButton2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            OpenChildForm(new OrderForm());
+            OpenChildForm(new tinhluong(_id));
 
         }
 
@@ -176,5 +177,7 @@ namespace GUI
             childForm.Show();
             lblHome.Text = childForm.Text;
         }
+
+       
     }
 }

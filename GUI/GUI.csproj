@@ -164,6 +164,12 @@
     <Compile Include="EMPLOYEE\TaiKhoanNhanVien\accountNV.Designer.cs">
       <DependentUpon>accountNV.cs</DependentUpon>
     </Compile>
+    <Compile Include="EMPLOYEE\tinhluongnhanvien\tinhluong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMPLOYEE\tinhluongnhanvien\tinhluong.Designer.cs">
+      <DependentUpon>tinhluong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +325,9 @@
     <EmbeddedResource Include="EMPLOYEE\TaiKhoanNhanVien\accountNV.resx">
       <DependentUpon>accountNV.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EMPLOYEE\tinhluongnhanvien\tinhluong.resx">
+      <DependentUpon>tinhluong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -410,6 +419,24 @@
   <ItemGroup>
     <None Include="Resources\icons8-menu-50.png" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup />
+=======
+  <ItemGroup>
+    <Folder Include="Admin\thongke\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-time-48.png" />
+  </ItemGroup>
+>>>>>>> ad55cb5d6d7510782e23653ebdce63afe2786ff0
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
