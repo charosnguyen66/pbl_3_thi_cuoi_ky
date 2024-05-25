@@ -30,3 +30,19 @@ H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCo
 H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
 H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.dll
 H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.pdb
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\bin\Debug\BusinessLayer.dll
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\bin\Debug\BusinessLayer.pdb
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\bin\Debug\DataLayer.dll
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\bin\Debug\EntityFramework.dll
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\bin\Debug\FontAwesome.Sharp.dll
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\bin\Debug\DataLayer.pdb
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\bin\Debug\DataLayer.dll.config
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\bin\Debug\EntityFramework.xml
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\obj\Debug\Business.EA331CBA.Up2Date
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\obj\Debug\BusinessLayer.dll
+F:\pbl_3_thi_cuoi_ky\BusinessLayer\obj\Debug\BusinessLayer.pdb

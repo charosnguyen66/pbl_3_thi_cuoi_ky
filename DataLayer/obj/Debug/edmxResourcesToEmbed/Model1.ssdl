@@ -1,15 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="PBL3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
-  </EntityType>
   <EntityType Name="tb_Admin">
     <Key>
       <PropertyRef Name="ID" />
@@ -62,16 +52,6 @@
     <Property Name="image" Type="image" />
     <Property Name="Address" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityType Name="tb_Ingredient">
-    <Key>
-      <PropertyRef Name="IngredientID" />
-    </Key>
-    <Property Name="IngredientID" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="IngredientName" Type="nvarchar" MaxLength="40" />
-    <Property Name="Number" Type="int" />
-    <Property Name="ProductID" Type="nchar" MaxLength="10" />
-    <Property Name="Note" Type="nchar" MaxLength="10" />
-  </EntityType>
   <EntityType Name="tb_Invoice">
     <Key>
       <PropertyRef Name="InvoiceID" />
@@ -94,6 +74,16 @@
     <Property Name="ProductID" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="Quanlity" Type="int" />
     <Property Name="Discount" Type="money" />
+  </EntityType>
+  <EntityType Name="tb_Ingredient">
+    <Key>
+      <PropertyRef Name="IngredientID" />
+    </Key>
+    <Property Name="IngredientID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="IngredientName" Type="nvarchar" MaxLength="40" />
+    <Property Name="Number" Type="int" />
+    <Property Name="ProductID" Type="nchar" MaxLength="10" />
+    <Property Name="Note" Type="nchar" MaxLength="10" />
   </EntityType>
   <EntityType Name="tb_OverTime">
     <Key>
@@ -312,15 +302,14 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="PBL3ModelStoreContainer">
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Admin" EntityType="Self.tb_Admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Category" EntityType="Self.tb_Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Customer" EntityType="Self.tb_Customer" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_DiningTable" EntityType="Self.tb_DiningTable" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Employee" EntityType="Self.tb_Employee" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tb_Ingredient" EntityType="Self.tb_Ingredient" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Invoice" EntityType="Self.tb_Invoice" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Invoice_Detail" EntityType="Self.tb_Invoice_Detail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tb_Ingredient" EntityType="Self.tb_Ingredient" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_OverTime" EntityType="Self.tb_OverTime" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Payment" EntityType="Self.tb_Payment" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tb_Product" EntityType="Self.tb_Product" Schema="dbo" store:Type="Tables" />

@@ -17,8 +17,8 @@ namespace DataLayer
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_Product()
         {
-            this.tb_Ingredient = new HashSet<tb_Ingredient>();
             this.tb_Invoice_Detail = new HashSet<tb_Invoice_Detail>();
+            this.tb_Ingredient = new HashSet<tb_Ingredient>();
             this.tb_Rating = new HashSet<tb_Rating>();
         }
     
@@ -33,9 +33,9 @@ namespace DataLayer
     
         public virtual tb_Category tb_Category { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_Ingredient> tb_Ingredient { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_Invoice_Detail> tb_Invoice_Detail { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_Ingredient> tb_Ingredient { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_Rating> tb_Rating { get; set; }
     }

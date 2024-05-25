@@ -25,15 +25,14 @@ namespace DataLayer
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<tb_Admin> tb_Admin { get; set; }
         public virtual DbSet<tb_Category> tb_Category { get; set; }
         public virtual DbSet<tb_Customer> tb_Customer { get; set; }
         public virtual DbSet<tb_DiningTable> tb_DiningTable { get; set; }
         public virtual DbSet<tb_Employee> tb_Employee { get; set; }
-        public virtual DbSet<tb_Ingredient> tb_Ingredient { get; set; }
         public virtual DbSet<tb_Invoice> tb_Invoice { get; set; }
         public virtual DbSet<tb_Invoice_Detail> tb_Invoice_Detail { get; set; }
+        public virtual DbSet<tb_Ingredient> tb_Ingredient { get; set; }
         public virtual DbSet<tb_OverTime> tb_OverTime { get; set; }
         public virtual DbSet<tb_Payment> tb_Payment { get; set; }
         public virtual DbSet<tb_Product> tb_Product { get; set; }
