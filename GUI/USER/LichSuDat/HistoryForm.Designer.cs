@@ -31,6 +31,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.btnChiTiet = new FontAwesome.Sharp.IconButton();
+            this.btnHuy = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -69,17 +70,31 @@
             this.btnChiTiet.UseVisualStyleBackColor = true;
             this.btnChiTiet.Click += new System.EventHandler(this.btnChiTiet_Click);
             // 
+            // btnHuy
+            // 
+            this.btnHuy.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuy.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnHuy.IconColor = System.Drawing.Color.Black;
+            this.btnHuy.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnHuy.Location = new System.Drawing.Point(40, 465);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(129, 40);
+            this.btnHuy.TabIndex = 3;
+            this.btnHuy.Text = "Hủy đơn";
+            this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
             // HistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 715);
+            this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.btnChiTiet);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "HistoryForm";
             this.Text = "HistoryForm";
-            //this.Load += new System.EventHandler(this.HistoryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -91,5 +106,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnChiTiet;
+        private FontAwesome.Sharp.IconButton btnHuy;
     }
 }

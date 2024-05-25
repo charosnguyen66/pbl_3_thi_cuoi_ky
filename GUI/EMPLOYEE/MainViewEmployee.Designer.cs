@@ -31,23 +31,23 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainViewEmployee));
             this.panelMenu = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblHome = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblName = new System.Windows.Forms.Label();
-            this.panelShadow = new System.Windows.Forms.Panel();
-            this.panelDesktop = new System.Windows.Forms.Panel();
-            this.iconButton5 = new FontAwesome.Sharp.IconButton();
-            this.iconcurrentChildHome = new FontAwesome.Sharp.IconPictureBox();
             this.btnHome = new System.Windows.Forms.PictureBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton4 = new FontAwesome.Sharp.IconButton();
+            this.lblHome = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.lblName = new System.Windows.Forms.Label();
+            this.iconcurrentChildHome = new FontAwesome.Sharp.IconPictureBox();
+            this.panelShadow = new System.Windows.Forms.Panel();
+            this.panelDesktop = new System.Windows.Forms.Panel();
             this.panelMenu.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconcurrentChildHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -73,90 +73,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(220, 140);
             this.panel2.TabIndex = 0;
-            // 
-            // lblHome
-            // 
-            this.lblHome.AutoSize = true;
-            this.lblHome.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.lblHome.Location = new System.Drawing.Point(43, 21);
-            this.lblHome.Name = "lblHome";
-            this.lblHome.Size = new System.Drawing.Size(67, 16);
-            this.lblHome.TabIndex = 1;
-            this.lblHome.Text = "Trang chủ";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.panel1.Controls.Add(this.iconButton5);
-            this.panel1.Controls.Add(this.lblName);
-            this.panel1.Controls.Add(this.lblHome);
-            this.panel1.Controls.Add(this.iconcurrentChildHome);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(220, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1397, 53);
-            this.panel1.TabIndex = 4;
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.lblName.Location = new System.Drawing.Point(1136, 16);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(2, 21);
-            this.lblName.TabIndex = 3;
-            // 
-            // panelShadow
-            // 
-            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
-            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelShadow.Location = new System.Drawing.Point(220, 53);
-            this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1397, 9);
-            this.panelShadow.TabIndex = 5;
-            // 
-            // panelDesktop
-            // 
-            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelDesktop.Location = new System.Drawing.Point(220, 62);
-            this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1397, 674);
-            this.panelDesktop.TabIndex = 6;
-            // 
-            // iconButton5
-            // 
-            this.iconButton5.FlatAppearance.BorderSize = 0;
-            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton5.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton5.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.UserTie;
-            this.iconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton5.IconSize = 38;
-            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton5.Location = new System.Drawing.Point(928, 8);
-            this.iconButton5.Name = "iconButton5";
-            this.iconButton5.Size = new System.Drawing.Size(214, 39);
-            this.iconButton5.TabIndex = 4;
-            this.iconButton5.Text = "Xin chào khách hàng,";
-            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.iconButton5.UseVisualStyleBackColor = true;
-            // 
-            // iconcurrentChildHome
-            // 
-            this.iconcurrentChildHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
-            this.iconcurrentChildHome.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.iconcurrentChildHome.IconChar = FontAwesome.Sharp.IconChar.House;
-            this.iconcurrentChildHome.IconColor = System.Drawing.SystemColors.ActiveBorder;
-            this.iconcurrentChildHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconcurrentChildHome.Location = new System.Drawing.Point(7, 13);
-            this.iconcurrentChildHome.Name = "iconcurrentChildHome";
-            this.iconcurrentChildHome.Size = new System.Drawing.Size(32, 32);
-            this.iconcurrentChildHome.TabIndex = 0;
-            this.iconcurrentChildHome.TabStop = false;
             // 
             // btnHome
             // 
@@ -258,6 +174,90 @@
             this.iconButton4.UseVisualStyleBackColor = true;
             this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
+            // lblHome
+            // 
+            this.lblHome.AutoSize = true;
+            this.lblHome.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            this.lblHome.Location = new System.Drawing.Point(43, 21);
+            this.lblHome.Name = "lblHome";
+            this.lblHome.Size = new System.Drawing.Size(67, 16);
+            this.lblHome.TabIndex = 1;
+            this.lblHome.Text = "Trang chủ";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.panel1.Controls.Add(this.iconButton5);
+            this.panel1.Controls.Add(this.lblName);
+            this.panel1.Controls.Add(this.lblHome);
+            this.panel1.Controls.Add(this.iconcurrentChildHome);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(220, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1397, 53);
+            this.panel1.TabIndex = 4;
+            // 
+            // iconButton5
+            // 
+            this.iconButton5.FlatAppearance.BorderSize = 0;
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton5.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.UserTie;
+            this.iconButton5.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.IconSize = 38;
+            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton5.Location = new System.Drawing.Point(928, 8);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(214, 39);
+            this.iconButton5.TabIndex = 4;
+            this.iconButton5.Text = "Xin chào nhân viên ";
+            this.iconButton5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.iconButton5.UseVisualStyleBackColor = true;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.lblName.Location = new System.Drawing.Point(1136, 16);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(2, 21);
+            this.lblName.TabIndex = 3;
+            // 
+            // iconcurrentChildHome
+            // 
+            this.iconcurrentChildHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(30)))), ((int)(((byte)(68)))));
+            this.iconcurrentChildHome.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.iconcurrentChildHome.IconChar = FontAwesome.Sharp.IconChar.House;
+            this.iconcurrentChildHome.IconColor = System.Drawing.SystemColors.ActiveBorder;
+            this.iconcurrentChildHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconcurrentChildHome.Location = new System.Drawing.Point(7, 13);
+            this.iconcurrentChildHome.Name = "iconcurrentChildHome";
+            this.iconcurrentChildHome.Size = new System.Drawing.Size(32, 32);
+            this.iconcurrentChildHome.TabIndex = 0;
+            this.iconcurrentChildHome.TabStop = false;
+            // 
+            // panelShadow
+            // 
+            this.panelShadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panelShadow.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelShadow.Location = new System.Drawing.Point(220, 53);
+            this.panelShadow.Name = "panelShadow";
+            this.panelShadow.Size = new System.Drawing.Size(1397, 9);
+            this.panelShadow.TabIndex = 5;
+            // 
+            // panelDesktop
+            // 
+            this.panelDesktop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.panelDesktop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelDesktop.Location = new System.Drawing.Point(220, 62);
+            this.panelDesktop.Name = "panelDesktop";
+            this.panelDesktop.Size = new System.Drawing.Size(1397, 674);
+            this.panelDesktop.TabIndex = 6;
+            // 
             // MainViewEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -273,10 +273,10 @@
             this.Load += new System.EventHandler(this.MainViewCustomer_Load);
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconcurrentChildHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnHome)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -117,6 +117,12 @@
     <Compile Include="EMPLOYEE\ManageTable\ManageTable.Designer.cs">
       <DependentUpon>ManageTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="EMPLOYEE\ManageTable\ucItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EMPLOYEE\ManageTable\ucItem.Designer.cs">
+      <DependentUpon>ucItem.cs</DependentUpon>
+    </Compile>
     <Compile Include="EMPLOYEE\ManageTable\updateInvoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,12 @@
     </Compile>
     <Compile Include="EMPLOYEE\TaiKhoanNhanVien\accountNV.Designer.cs">
       <DependentUpon>accountNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYEE\tinhluongnhanvien\tinhluong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMPLOYEE\tinhluongnhanvien\tinhluong.Designer.cs">
+      <DependentUpon>tinhluong.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -272,11 +284,17 @@
     <EmbeddedResource Include="EMPLOYEE\ManageTable\ManageTable.resx">
       <DependentUpon>ManageTable.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EMPLOYEE\ManageTable\ucItem.resx">
+      <DependentUpon>ucItem.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EMPLOYEE\ManageTable\updateInvoice.resx">
       <DependentUpon>updateInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EMPLOYEE\TaiKhoanNhanVien\accountNV.resx">
       <DependentUpon>accountNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMPLOYEE\tinhluongnhanvien\tinhluong.resx">
+      <DependentUpon>tinhluong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -374,6 +392,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Admin\thongke\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Capture.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\11.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-time-48.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
