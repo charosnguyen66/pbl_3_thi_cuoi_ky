@@ -30,6 +30,7 @@ namespace GUI.EMPLOYEE.ManageTable
                 lblTen.Text = value;
             }
         }
+        public string desss { get; set; }
         public string sdt
         {
             get

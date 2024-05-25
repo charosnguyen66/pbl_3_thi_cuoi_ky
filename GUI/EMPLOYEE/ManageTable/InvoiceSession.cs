@@ -10,5 +10,7 @@ namespace GUI.EMPLOYEE.ManageTable
     {
         public static string idOfInvoice {  get; set; }
         public static string inOfTable { get; set; }
+        public static decimal tienKhachDua {  get; set; }
+        public static double tongTien {  get; set; }
     }
 }

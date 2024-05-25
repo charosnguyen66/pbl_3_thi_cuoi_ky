@@ -79,7 +79,6 @@ H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.ManageEmployee.resources
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.ManageIngredient.resources
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.THUCDON.ChinhSua.resources
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.ManageMenu.resources
-H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.ManageStatistic.resources
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.Properties.Resources.resources
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.RegistrationForm.resources
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.THUCDON.ThemMoi.resources
@@ -98,3 +97,15 @@ H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.exe
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.pdb
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.EMPLOYEE.ManageTable.updateInvoice.resources
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.EMPLOYEE.ManageTable.ucItem.resources
+H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.EMPLOYEE.ManageTable.HoaDon.resources
+H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\InputMoneyForm.resources
+H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.Admin.ThongKe.ManageStatistic.resources
+H:\ki4\pbl3\PBL33 - Copy (2)\GUI\bin\Debug\LiveCharts.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\GUI\bin\Debug\LiveCharts.WinForms.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\GUI\bin\Debug\LiveCharts.Wpf.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\GUI\bin\Debug\LiveCharts.pdb
+H:\ki4\pbl3\PBL33 - Copy (2)\GUI\bin\Debug\LiveCharts.xml
+H:\ki4\pbl3\PBL33 - Copy (2)\GUI\bin\Debug\LiveCharts.WinForms.pdb
+H:\ki4\pbl3\PBL33 - Copy (2)\GUI\bin\Debug\LiveCharts.WinForms.xml
+H:\ki4\pbl3\PBL33 - Copy (2)\GUI\bin\Debug\LiveCharts.Wpf.pdb
+H:\ki4\pbl3\PBL33 - Copy (2)\GUI\bin\Debug\LiveCharts.Wpf.xml

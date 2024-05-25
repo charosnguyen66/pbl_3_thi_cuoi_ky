@@ -21,6 +21,20 @@ namespace BusinessLayer
             return db.tb_DiningTable.ToList();
 
         }
+        public void changeStatus1(string id)
+        {
+            List<tb_DiningTable> list = GetAccountsFromTable("");
+            foreach (var i in list)
+            {
+                if (i.TableID == id)
+                {
+                    i.Description = "0";
+
+                    Update(i);
+                }
+
+            }
+        }
         public tb_DiningTable getItem(string id) { return db.tb_DiningTable.FirstOrDefault(x => x.TableID == id); }
         public bool checkExist(string username)
         {
@@ -38,18 +52,24 @@ namespace BusinessLayer
         }
         public void changeStatus(string id)
         {
-            List<tb_DiningTable> list = GetAccountsFromTable("tb_DiningTable");
-            foreach (var i in list)
-            {
-                if (i.TableID.Trim() == id.Trim())
-                {
-                    i.Description = "1";
+            string[] ids = id.Split(',');
 
-                    Update(i);
+            foreach (string tableId in ids)
+            {
+                List<tb_DiningTable> list = GetAccountsFromTable("tb_DiningTable");
+
+                foreach (var i in list)
+                {
+                    if (i.TableID.Trim() == tableId.Trim())
+                    {
+                        i.Description = "1";
+
+                        Update(i);
+                    }
                 }
-             
             }
         }
+
 
         public tb_DiningTable Update(tb_DiningTable employee)
         {

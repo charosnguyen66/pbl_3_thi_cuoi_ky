@@ -37,6 +37,9 @@
             this.btnThemMon = new FontAwesome.Sharp.IconButton();
             this.btnInHoaDon = new FontAwesome.Sharp.IconButton();
             this.pnMonAn = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnChuyen = new FontAwesome.Sharp.IconButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTongTien = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -123,6 +126,7 @@
             this.btnInHoaDon.TabIndex = 8;
             this.btnInHoaDon.Text = "In hóa đơn";
             this.btnInHoaDon.UseVisualStyleBackColor = true;
+            this.btnInHoaDon.Click += new System.EventHandler(this.btnInHoaDon_Click);
             // 
             // pnMonAn
             // 
@@ -130,12 +134,49 @@
             this.pnMonAn.Name = "pnMonAn";
             this.pnMonAn.Size = new System.Drawing.Size(1160, 499);
             this.pnMonAn.TabIndex = 13;
+            this.pnMonAn.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMonAn_Paint);
+            // 
+            // btnChuyen
+            // 
+            this.btnChuyen.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnChuyen.IconColor = System.Drawing.Color.Black;
+            this.btnChuyen.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnChuyen.Location = new System.Drawing.Point(430, 607);
+            this.btnChuyen.Name = "btnChuyen";
+            this.btnChuyen.Size = new System.Drawing.Size(149, 40);
+            this.btnChuyen.TabIndex = 14;
+            this.btnChuyen.Text = "Cập nhật bàn trống";
+            this.btnChuyen.UseVisualStyleBackColor = true;
+            this.btnChuyen.Click += new System.EventHandler(this.btnChuyen_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(695, 619);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 19);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Tổng tiền: ";
+            // 
+            // lblTongTien
+            // 
+            this.lblTongTien.AutoSize = true;
+            this.lblTongTien.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTongTien.Location = new System.Drawing.Point(803, 618);
+            this.lblTongTien.Name = "lblTongTien";
+            this.lblTongTien.Size = new System.Drawing.Size(53, 20);
+            this.lblTongTien.TabIndex = 16;
+            this.lblTongTien.Text = "label3";
             // 
             // ManageTable
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1225, 659);
+            this.Controls.Add(this.lblTongTien);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnChuyen);
             this.Controls.Add(this.pnMonAn);
             this.Controls.Add(this.txtTimKiem);
             this.Controls.Add(this.pictureBox2);
@@ -161,5 +202,8 @@
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.FlowLayoutPanel pnMonAn;
+        private FontAwesome.Sharp.IconButton btnChuyen;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTongTien;
     }
 }

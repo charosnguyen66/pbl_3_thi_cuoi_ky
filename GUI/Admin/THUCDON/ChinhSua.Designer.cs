@@ -179,7 +179,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "ChinhSua";
             this.Text = "ChinhSua";
             this.Load += new System.EventHandler(this.ChinhSua_Load);

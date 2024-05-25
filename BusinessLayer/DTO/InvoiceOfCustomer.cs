@@ -12,7 +12,9 @@ namespace BusinessLayer.DTO
         public string sdt {  get; set; }
         public string address {  get; set; }
         public string InvoiceID {  get; set; }
+        public string dess {  get; set; }
         public string maBan {  get; set; }
+        public string listBan { get; set; }
 
     }
 }

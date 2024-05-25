@@ -49,6 +49,15 @@
     <Reference Include="FontAwesome.Sharp, Version=6.3.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.3.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.WinForms, Version=0.9.7.1, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.WinForms.0.9.7.1\lib\net45\LiveCharts.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -66,6 +75,7 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\KhachHang\ChinhSuaKH.cs">
@@ -92,6 +102,7 @@
     <Compile Include="Admin\KhachHang\ThemMoiKH.Designer.cs">
       <DependentUpon>ThemMoiKH.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\NguyenLieu\InputBox.cs" />
     <Compile Include="Admin\Nhanvien\ChinhSuaNV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +120,24 @@
     </Compile>
     <Compile Include="Admin\Nhanvien\Them.Designer.cs">
       <DependentUpon>Them.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ThongKe\ManageStatistic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ThongKe\ManageStatistic.Designer.cs">
+      <DependentUpon>ManageStatistic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYEE\ManageTable\HoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMPLOYEE\ManageTable\HoaDon.Designer.cs">
+      <DependentUpon>HoaDon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYEE\ManageTable\InputMoneyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMPLOYEE\ManageTable\InputMoneyForm.Designer.cs">
+      <DependentUpon>InputMoneyForm.cs</DependentUpon>
     </Compile>
     <Compile Include="EMPLOYEE\ManageTable\InvoiceSession.cs" />
     <Compile Include="EMPLOYEE\ManageTable\ManageTable.cs">
@@ -208,10 +237,10 @@
     <Compile Include="Admin\Nhanvien\ManageEmployee.Designer.cs">
       <DependentUpon>ManageEmployee.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\ManageIngredient.cs">
+    <Compile Include="Admin\NguyenLieu\ManageIngredient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Admin\ManageIngredient.Designer.cs">
+    <Compile Include="Admin\NguyenLieu\ManageIngredient.Designer.cs">
       <DependentUpon>ManageIngredient.cs</DependentUpon>
     </Compile>
     <Compile Include="Admin\THUCDON\ChinhSua.cs">
@@ -225,12 +254,6 @@
     </Compile>
     <Compile Include="Admin\THUCDON\ManageMenu.Designer.cs">
       <DependentUpon>ManageMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Admin\THUCDON\ManageStatistic.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\THUCDON\ManageStatistic.Designer.cs">
-      <DependentUpon>ManageStatistic.cs</DependentUpon>
     </Compile>
     <Compile Include="mdProperties.cs" />
     <Compile Include="Program.cs" />
@@ -275,6 +298,15 @@
     <EmbeddedResource Include="Admin\Nhanvien\Them.resx">
       <DependentUpon>Them.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ThongKe\ManageStatistic.resx">
+      <DependentUpon>ManageStatistic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMPLOYEE\ManageTable\HoaDon.resx">
+      <DependentUpon>HoaDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMPLOYEE\ManageTable\InputMoneyForm.resx">
+      <DependentUpon>InputMoneyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EMPLOYEE\ManageTable\ManageTable.resx">
       <DependentUpon>ManageTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,7 +334,7 @@
     <EmbeddedResource Include="Admin\Nhanvien\ManageEmployee.resx">
       <DependentUpon>ManageEmployee.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Admin\ManageIngredient.resx">
+    <EmbeddedResource Include="Admin\NguyenLieu\ManageIngredient.resx">
       <DependentUpon>ManageIngredient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\THUCDON\ChinhSua.resx">
@@ -310,9 +342,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\THUCDON\ManageMenu.resx">
       <DependentUpon>ManageMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\THUCDON\ManageStatistic.resx">
-      <DependentUpon>ManageStatistic.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -381,8 +410,6 @@
   <ItemGroup>
     <None Include="Resources\icons8-menu-50.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Admin\thongke\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

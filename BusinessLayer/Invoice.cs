@@ -56,6 +56,20 @@ namespace BusinessLayer
             }
 
         }
+        public void changeStatus(string id)
+        {
+            List<tb_Invoice> list = GetAccountsFromTable("");
+            foreach(var i in list)
+            {
+                if(i.InvoiceID == id)
+                {
+                    i.Status = "Đã thanh toán";
+
+                    Update(i);
+                }
+
+            }
+        }
         public string GetLastInvoiceID()
         {
             var lastInvoice = db.tb_Invoice.OrderByDescending(i => i.InvoiceID).FirstOrDefault();
@@ -83,14 +97,14 @@ namespace BusinessLayer
                 throw new Exception(ex.Message);
             }
         }
-        public List<InvoiceOfCustomer> GetAccountsFromTable12()
+        public List<InvoiceOfCustomer> GetAccountsFromTable12(DateTime d)
         {
-                List<tb_Invoice> list = db.tb_Invoice.ToList();
-                List<InvoiceOfCustomer> result = new List<InvoiceOfCustomer>();
-                InvoiceOfCustomer kk;
-                foreach (tb_Invoice e in list)
-                {
-                    kk = new InvoiceOfCustomer();
+            List<tb_Invoice> list = db.tb_Invoice.Where(e => e.OrderDate == d.Date).ToList();
+            List<InvoiceOfCustomer> result = new List<InvoiceOfCustomer>();
+            InvoiceOfCustomer kk;
+            foreach (tb_Invoice e in list)
+            {
+                kk = new InvoiceOfCustomer();
                 var customer = db.tb_Customer.SingleOrDefault(c => c.CustomerID == e.CustomerID);
                 if (customer != null)
                 {
@@ -99,13 +113,50 @@ namespace BusinessLayer
                     kk.address = customer.Address;
                     kk.InvoiceID = e.InvoiceID;
                     kk.maBan = e.TableID;
+                    kk.dess = e.Status;
+                    kk.listBan = e.Note;
                     result.Add(kk);
                 }
-           
             }
             return result;
         }
-   
+        public List<Print_DTO> getPrint(string id)
+        {
+            List<Print_DTO> result = new List<Print_DTO>();
+
+            // Lấy danh sách hóa đơn có InvoiceID tương ứng với id
+            var invoices = db.tb_Invoice.Where(inv => inv.InvoiceID.Trim() == id).ToList();
+
+            // Lặp qua từng hóa đơn
+            foreach (var invoice in invoices)
+            {
+                // Lấy danh sách chi tiết hóa đơn tương ứng với hóa đơn hiện tại
+                var invoiceDetails = db.tb_Invoice_Detail.Where(detail => detail.InvoiceID.Trim() == invoice.InvoiceID.Trim()).ToList();
+
+                // Lặp qua từng chi tiết hóa đơn để tạo thông tin in
+                foreach (var detail in invoiceDetails)
+                {
+                    Print_DTO printDTO = new Print_DTO();
+
+                    // Lấy thông tin sản phẩm từ chi tiết hóa đơn
+                    var product = db.tb_Product.SingleOrDefault(p => p.ProductID.Trim() == detail.ProductID.Trim());
+
+                    if (product != null)
+                    {
+                        printDTO.tenMon = product.ProductName;
+                        printDTO.soLuong = (int)detail.Quanlity;
+                        printDTO.donGia = (double)product.Price;
+                        printDTO.thanhTien = (int)detail.Quanlity * (double)product.Price;
+
+                        result.Add(printDTO);
+                    }
+                }
+            }
+
+            return result;
+        }
+
+
 
         public string GetPaymentNameById(string paymentId)
         {

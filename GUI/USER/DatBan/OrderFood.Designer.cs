@@ -108,7 +108,7 @@
             this.txtTimKiem.Margin = new System.Windows.Forms.Padding(0);
             this.txtTimKiem.Multiline = true;
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(232, 28);
+            this.txtTimKiem.Size = new System.Drawing.Size(239, 28);
             this.txtTimKiem.TabIndex = 6;
             this.txtTimKiem.Text = "Tìm kiếm";
             this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
@@ -118,7 +118,7 @@
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(475, 26);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(283, 49);
+            this.pictureBox2.Size = new System.Drawing.Size(340, 49);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;

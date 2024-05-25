@@ -30,3 +30,12 @@ H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCo
 H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
 H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.dll
 H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.pdb
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.WinForms.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.Wpf.dll
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.pdb
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.xml
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.WinForms.pdb
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.WinForms.xml
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.Wpf.pdb
+H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.Wpf.xml

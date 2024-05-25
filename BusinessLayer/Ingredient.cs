@@ -1,4 +1,5 @@
-﻿using DataLayer;
+﻿using BusinessLayer.DTO;
+using DataLayer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,40 @@ namespace BusinessLayer
 
             return db.tb_Ingredient.ToList();
 
+        }
+        public List<Ingredient_DTO> GetSelectedIngredients()
+        {
+            var selectedIngredients = db.tb_Ingredient
+                .Join(
+                    db.tb_Product,
+                    ingredient => ingredient.ProductID,
+                    product => product.ProductID,
+                    (ingredient, product) => new Ingredient_DTO
+                    {
+                        IngredientID = ingredient.IngredientID,
+                        Name = ingredient.IngredientName,
+                        Number = (int)ingredient.Number,
+                        ProductName = product.ProductName,
+                        Note = ingredient.Note
+                    })
+                .ToList();
+
+            return selectedIngredients;
+        }
+
+        public void setNumberToIngredient(string id, int number)
+        {
+            List<tb_Ingredient> list = GetAccountsFromTable("");
+            foreach (var i in list)
+            {
+                if (i.IngredientID == id)
+                {
+                    i.Number += number;
+
+                    Update(i);
+                }
+
+            }
         }
         public tb_Ingredient Update(tb_Ingredient customer)
         {
