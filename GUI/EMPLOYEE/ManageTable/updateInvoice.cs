@@ -1,5 +1,7 @@
 ﻿using BusinessLayer;
 using DataLayer;
+using GUI.Admin.Customer;
+using GUI.USER;
 using GUI.USER.DatBan;
 using System;
 using System.Collections.Generic;
@@ -24,7 +26,10 @@ namespace GUI.EMPLOYEE.ManageTable
         String _tableName = "";
         Category _category;
         Product _product;
+        Ingredient _ingre;
         DiningTable _table;
+        Invoice _invoice;
+        Invoice_Detail _invoice_Detail;
         string _idInvoi;
         public updateInvoice(string nameTable = null, string id = null)
         {
@@ -33,8 +38,11 @@ namespace GUI.EMPLOYEE.ManageTable
             _tableName = nameTable;
             _category = new Category();
             _product = new Product();
+            _invoice = new Invoice();
+            _invoice_Detail = new Invoice_Detail();
             _idInvoi = id;
             _table = new DiningTable();
+            _ingre = new Ingredient();
             categoryNames = GetCategoryNames();
             LoadCategory();
             LoadProduct();
@@ -267,6 +275,25 @@ namespace GUI.EMPLOYEE.ManageTable
         }
 
 
+       
+        public string GenerateNewInvoiceID()
+        {
+            Invoice invoiceService = new Invoice();
+            string lastInvoiceID = invoiceService.GetLastInvoiceID();
+
+            if (string.IsNullOrEmpty(lastInvoiceID))
+            {
+                return "HD01"; // Nếu không có hóa đơn nào, bắt đầu từ HD01
+            }
+
+            string numberPart = lastInvoiceID.Substring(2);
+            int number = int.Parse(numberPart);
+
+            number++;
+
+            return "HD" + number.ToString("D2");
+        }
+
         public void SaveChangesWithValidation(PBL3Entities context)
         {
             try
@@ -303,15 +330,20 @@ namespace GUI.EMPLOYEE.ManageTable
         }
         private string GenerateNewIDDetail()
         {
-            string newID;
-            using (var context = new PBL3Entities())
+            Invoice_Detail invoiceService = new Invoice_Detail();
+            string lastInvoiceID = invoiceService.GetLastInvoiceID();
+
+            if (string.IsNullOrEmpty(lastInvoiceID))
             {
-                do
-                {
-                    newID = "CT" + new Random().Next(1000, 9999).ToString();
-                } while (context.tb_Invoice_Detail.Any(detail => detail.ID == newID));
+                return "CT01"; // Nếu không có hóa đơn nào, bắt đầu từ HD01
             }
-            return newID;
+
+            string numberPart = lastInvoiceID.Substring(2);
+            int number = int.Parse(numberPart);
+
+            number++;
+
+            return "CT" + number.ToString("D2");
         }
 
         private void iconButton1_Click(object sender, EventArgs e)
@@ -320,88 +352,39 @@ namespace GUI.EMPLOYEE.ManageTable
 
             if (confirmResult == DialogResult.Yes)
             {
-                string[] tableNames = _tableName.Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                Invoice u = new Invoice();
-                string idKH="";
-                List<tb_Invoice> list = u.GetAccountsFromTable("tb_Invoice");
-                foreach(var i in list)
+                try
                 {
-                    if(i.InvoiceID == _idInvoi)
+                    
+                    foreach (DataGridViewRow row in dgvSP.Rows)
                     {
-                        idKH = i.CustomerID;
-                    }
-                }
-                using (var context = new PBL3Entities())
-                {
-                    try
-                    {
-                        var newInvoice = new tb_Invoice
+                        string productID = row.Cells["ProductID"].Value?.ToString();
+                        if (string.IsNullOrEmpty(productID)) continue;
+
+                        int quantity = Convert.ToInt32(row.Cells["Quantity"].Value);
+                        string detailID = GenerateNewIDDetail();
+                        var newDetail = new tb_Invoice_Detail
                         {
+                            ID = detailID,
                             InvoiceID = _idInvoi,
-                            CustomerID = idKH,
-                            OrderDate = DateTime.Now,
-                            PaymentID = null,
-                            Status = null,
-                            TableID = _tableName,
+                            ProductID = productID,
+                            Quanlity = quantity,
                         };
-
-                        if (tableNames.Length > 2)
-                        {
-                            newInvoice.Note = "Gộp các bàn" + _tableName;
-                        }
-
-                        context.tb_Invoice.AddOrUpdate(newInvoice);
-
-                        foreach (DataGridViewRow row in dgvSP.Rows)
-                        {
-                            if (row.IsNewRow) continue;
-                            string productID = row.Cells["ProductID"].Value?.ToString();
-                            int quantity = Convert.ToInt32(row.Cells["Quantity"].Value);
-                            decimal discount = 0;
-                            string detailID = this.GenerateNewIDDetail(); // Fully qualify the method call
-
-                            var newDetail = new tb_Invoice_Detail
-                            {
-                                ID = detailID,
-                                InvoiceID = _idInvoi,
-                                ProductID = productID,
-                                Quanlity = quantity,
-                                Discount = discount
-                            };
-
-                            var ingredients = context.tb_Ingredient.Where(i => i.ProductID == productID).ToList();
-                            foreach (var ingredient in ingredients)
-                            {
-                                if (ingredient.Number >= quantity)
-                                {
-                                    ingredient.Number -= quantity;
-                                }
-                                else
-                                {
-                                    throw new Exception($"Không đủ nguyên liệu cho sản phẩm {productID}");
-                                }
-                            }
-
-                            context.tb_Invoice_Detail.Add(newDetail);
-                        }
-                  
-
-                        context.SaveChanges();
-                        MessageBox.Show("Chi tiết hóa đơn đã được thêm thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        this.Close();
+                        _ingre.setIngrdient(productID, quantity);
+                       
+                        _invoice_Detail.AddNew(newDetail);
 
 
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Có lỗi xảy ra: {ex.Message}\nChi tiết: {ex.InnerException?.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Console.WriteLine(ex.ToString());
-                    }
+                    MessageBox.Show("Thêm món cho khách thành công. ");
+
+
                 }
-            }
-            else
-            {
-                MessageBox.Show("Thêm chi tiết hóa đơn đã bị hủy bỏ.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                catch (Exception ex)
+                {
+                    var innerExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : "No inner exception";
+                    MessageBox.Show($"Có lỗi xảy ra: {ex.Message}\nChi tiết: {innerExceptionMessage}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine(ex.ToString());
+                }
             }
         }
 
@@ -419,6 +402,36 @@ namespace GUI.EMPLOYEE.ManageTable
         private void pictureBox4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
+        {
+            if (dgvSP.SelectedRows.Count > 0)
+            {
+                // Xác nhận hàng mới nếu có
+                dgvSP.EndEdit();
+
+                try
+                {
+                    // Xóa hàng được chọn
+                    foreach (DataGridViewRow row in dgvSP.SelectedRows)
+                    {
+                        if (!row.IsNewRow)
+                        {
+                            dgvSP.Rows.Remove(row);
+                        }
+                    }
+                }
+                catch (InvalidOperationException ex)
+                {
+                    MessageBox.Show("Không thể xóa hàng mới chưa được xác nhận. Vui lòng xác nhận hàng trước khi xóa.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine($"Error: {ex.Message}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn hàng cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
     }
 }

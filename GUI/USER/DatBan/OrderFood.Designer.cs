@@ -54,6 +54,7 @@
             this.pnMonAn.Name = "pnMonAn";
             this.pnMonAn.Size = new System.Drawing.Size(834, 568);
             this.pnMonAn.TabIndex = 0;
+            this.pnMonAn.Paint += new System.Windows.Forms.PaintEventHandler(this.pnMonAn_Paint);
             // 
             // dgvSP
             // 

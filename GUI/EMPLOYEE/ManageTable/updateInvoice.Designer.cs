@@ -124,6 +124,7 @@
             this.btnXoa.TabIndex = 27;
             this.btnXoa.Text = "Loại bỏ";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
             // iconButton1
             // 

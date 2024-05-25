@@ -97,6 +97,7 @@ H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.csproj.CopyComplete
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.exe
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.pdb
 H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.EMPLOYEE.ManageTable.updateInvoice.resources
+<<<<<<< HEAD
 F:\pbl_truc\pbl_3_thi_cuoi_ky\GUI\bin\Debug\GUI.exe.config
 F:\pbl_truc\pbl_3_thi_cuoi_ky\GUI\bin\Debug\GUI.exe
 F:\pbl_truc\pbl_3_thi_cuoi_ky\GUI\bin\Debug\GUI.pdb
@@ -147,3 +148,8 @@ F:\pbl_truc\pbl_3_thi_cuoi_ky\GUI\obj\Debug\GUI.csproj.CoreCompileInputs.cache
 F:\pbl_truc\pbl_3_thi_cuoi_ky\GUI\obj\Debug\GUI.csproj.Up2Date
 F:\pbl_truc\pbl_3_thi_cuoi_ky\GUI\obj\Debug\GUI.exe
 F:\pbl_truc\pbl_3_thi_cuoi_ky\GUI\obj\Debug\GUI.pdb
+=======
+H:\ki4\pbl3\PBL33 - Copy (2)\GUI\obj\Debug\GUI.EMPLOYEE.ManageTable.ucItem.resources
+>>>>>>> 284ed5155835dc9394ade9361f9d9349328df455
+F:\pbl_truc\pbl_3_thi_cuoi_ky\GUI\obj\Debug\GUI.EMPLOYEE.ManageTable.ucItem.resources
+F:\pbl_truc\pbl_3_thi_cuoi_ky\GUI\obj\Debug\GUI.EMPLOYEE.tinhluongnhanvien.tinhluong.resources
