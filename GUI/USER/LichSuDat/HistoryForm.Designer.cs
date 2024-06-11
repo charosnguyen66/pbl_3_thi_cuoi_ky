@@ -1,16 +1,11 @@
-﻿namespace GUI.USER.LichSuDat
+﻿using System.Drawing;
+
+namespace GUI.USER.LichSuDat
 {
     partial class HistoryForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +17,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -45,6 +36,15 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1144, 353);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
+            this.dataGridView1.EnableHeadersVisualStyles = false;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.LightSlateGray;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Century Gothic", 10, FontStyle.Bold);
+            this.dataGridView1.DefaultCellStyle.SelectionBackColor = Color.LightBlue;
+            this.dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Black;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGray;
             // 
             // label1
             // 

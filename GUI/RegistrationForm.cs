@@ -1,13 +1,7 @@
 ﻿using BusinessLayer;
 using DataLayer;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GUI
@@ -20,7 +14,6 @@ namespace GUI
         {
             InitializeComponent();
             _account = new Account();
-
         }
 
         private void RegistrationForm_Load(object sender, EventArgs e)
@@ -30,42 +23,30 @@ namespace GUI
 
         private void checkEdit1_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkEdit1.Checked)
-            {
-                txtPass.UseSystemPasswordChar = false;
-                txtRePass.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txtPass.UseSystemPasswordChar = true;
-                txtRePass.UseSystemPasswordChar = true;
-            }
+           
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click_1(object sender, EventArgs e)
         {
-            if (txtPass.Text != txtRePass.Text)
+            if (!ValidateInputs())
             {
-                labelControl10.Visible = true;
-                button1.BackColor = Color.Azure;
-                button1.ForeColor = Color.Red;
-                button1.Enabled = false;
+                return;
             }
 
-            else
+            tb_Customer account = new tb_Customer
             {
-                labelControl10.Visible = false;
+                CustomerID = txtuser.Text,
+                Password = HashCode.HashPassword(txtPass.Text),
+                Address = "",
+                Birthdate = DateTime.Now,
+                Name = "",
+                Gender = true,
+                RewardPoints = 0,
+                PhoneNumber = ""
+            };
 
-                tb_Customer account = new tb_Customer();
-                account.CustomerID = txtuser.Text;
-                account.Password = txtPass.Text;
-                account.Address = "";
-                account.Birthdate = DateTime.Now;
-                account.Name = "";
-                account.Gender = true;
-                account.RewardPoints = 0;
-                account.PhoneNumber = "";
-
+            try
+            {
                 _account.AddNew(account);
                 DialogResult result = MessageBox.Show("Thêm tài khoản thành công! Bạn muốn đăng nhập không?", "Thông báo", MessageBoxButtons.YesNo);
 
@@ -75,10 +56,28 @@ namespace GUI
                     Login f1 = new Login();
                     f1.Show();
                 }
-                else
-                {
-                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Đã có lỗi xảy ra: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private bool ValidateInputs()
+        {
+            if (txtPass.Text != txtRePass.Text)
+            {
+                MessageBox.Show("Mật khẩu không khớp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (_account.checkExist(txtuser.Text))
+            {
+                MessageBox.Show("Mã CustomerID đã tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
 
         private void txtuser_TextChanged(object sender, EventArgs e)
@@ -86,17 +85,14 @@ namespace GUI
             if (_account.checkExist(txtuser.Text))
             {
                 button1.BackColor = Color.Azure;
-                button1.ForeColor = Color.PeachPuff;
+                button1.ForeColor = Color.Red;
                 button1.Enabled = false;
-
             }
             else
             {
-                // Khôi phục màu sắc mặc định của nút
                 button1.BackColor = Color.Gray;
-                button1.ForeColor = Color.PeachPuff;
+                button1.ForeColor = Color.Black;
                 button1.Enabled = true;
-
             }
         }
 
@@ -105,6 +101,12 @@ namespace GUI
             Hide();
             Login f1 = new Login();
             f1.Show();
+        }
+
+        private void checkEdit1_CheckedChanged_1(object sender, EventArgs e)
+        {
+            txtPass.UseSystemPasswordChar = !checkEdit1.Checked;
+            txtRePass.UseSystemPasswordChar = !checkEdit1.Checked;
         }
     }
 }

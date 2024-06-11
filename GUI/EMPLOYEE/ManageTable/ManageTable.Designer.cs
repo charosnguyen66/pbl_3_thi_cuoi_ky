@@ -143,7 +143,11 @@
             this.btnChuyen.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnChuyen.Location = new System.Drawing.Point(430, 607);
             this.btnChuyen.Name = "btnChuyen";
+<<<<<<< HEAD
+            this.btnChuyen.Size = new System.Drawing.Size(189, 40);
+=======
             this.btnChuyen.Size = new System.Drawing.Size(149, 40);
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             this.btnChuyen.TabIndex = 14;
             this.btnChuyen.Text = "Cập nhật bàn trống";
             this.btnChuyen.UseVisualStyleBackColor = true;
@@ -165,9 +169,14 @@
             this.lblTongTien.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongTien.Location = new System.Drawing.Point(803, 618);
             this.lblTongTien.Name = "lblTongTien";
+<<<<<<< HEAD
+            this.lblTongTien.Size = new System.Drawing.Size(0, 20);
+            this.lblTongTien.TabIndex = 16;
+=======
             this.lblTongTien.Size = new System.Drawing.Size(53, 20);
             this.lblTongTien.TabIndex = 16;
             this.lblTongTien.Text = "label3";
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             // 
             // ManageTable
             // 

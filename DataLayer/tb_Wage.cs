@@ -14,11 +14,10 @@ namespace DataLayer
     
     public partial class tb_Wage
     {
+        public string WageID { get; set; }
         public string EmployeeID { get; set; }
-        public Nullable<System.DateTime> TimeStart { get; set; }
-        public Nullable<System.DateTime> TimeEnd { get; set; }
-        public Nullable<int> WorkingTime { get; set; }
-        public string Wage { get; set; }
+        public Nullable<System.DateTime> MonthWage { get; set; }
+        public Nullable<double> Wage { get; set; }
     
         public virtual tb_Employee tb_Employee { get; set; }
     }

@@ -136,9 +136,19 @@ namespace GUI.EMPLOYEE.ManageTable
         {
             var selectedTable = btnThemMon.Tag as InvoiceOfCustomer;
             _invoice.changeStatus(selectedTable.InvoiceID);
+<<<<<<< HEAD
+
+            // Convert listBan to List<string> if it's not already
+            List<string> tableIds = selectedTable.listBan.Split(',').ToList();
+
+            _diningTable.changeStatus1(tableIds);
+        }
+
+=======
             _diningTable.changeStatus1(selectedTable.listBan);
             
         }
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

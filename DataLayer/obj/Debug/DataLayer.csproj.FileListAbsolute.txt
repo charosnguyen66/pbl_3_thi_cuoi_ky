@@ -25,6 +25,9 @@ H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
 H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\obj\Debug\DataLayer.dll
 H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\obj\Debug\DataLayer.pdb
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
 H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\LiveCharts.dll
 H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\LiveCharts.WinForms.dll
 H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\LiveCharts.Wpf.dll
@@ -34,6 +37,30 @@ H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\LiveCharts.WinForms.pdb
 H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\LiveCharts.WinForms.xml
 H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\LiveCharts.Wpf.pdb
 H:\ki4\pbl3\PBL33 - Copy (2)\DataLayer\bin\Debug\LiveCharts.Wpf.xml
+<<<<<<< HEAD
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\DataLayer.dll.config
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\DataLayer.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\DataLayer.pdb
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\EntityFramework.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\FontAwesome.Sharp.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\LiveCharts.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\LiveCharts.WinForms.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\LiveCharts.Wpf.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\EntityFramework.xml
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\LiveCharts.pdb
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\LiveCharts.xml
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\LiveCharts.WinForms.pdb
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\LiveCharts.WinForms.xml
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\LiveCharts.Wpf.pdb
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\bin\Debug\LiveCharts.Wpf.xml
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\obj\Debug\DataLayer.csproj.AssemblyReference.cache
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\obj\Debug\DataLayer.csproj.CoreCompileInputs.cache
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\obj\Debug\DataLayer.csproj.CopyComplete
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\obj\Debug\DataLayer.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\obj\Debug\DataLayer.pdb
+=======
 =======
 <<<<<<< HEAD
 F:\pbl_3_thi_cuoi_ky\DataLayer\bin\Debug\DataLayer.dll.config
@@ -65,3 +92,4 @@ F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\obj\Debug\DataLayer.dll
 F:\pbl_truc\pbl_3_thi_cuoi_ky\DataLayer\obj\Debug\DataLayer.pdb
 >>>>>>> 46a6e00990b4aa41df934776910e83ec20209f87
 >>>>>>> ad55cb5d6d7510782e23653ebdce63afe2786ff0
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef

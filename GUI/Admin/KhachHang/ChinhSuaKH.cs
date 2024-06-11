@@ -16,7 +16,7 @@ namespace GUI.Admin.Customer
     {
         Account _customer;
         string _maKH, _pass;
-        public ChinhSuaKH(string id, string name, string phone, bool gender, DateTime birth, string address, int reward, string pass)
+        public ChinhSuaKH(string id, string name, string phone, bool gender, DateTime birth, string address, int reward)
         {
           
             InitializeComponent();
@@ -29,7 +29,6 @@ namespace GUI.Admin.Customer
             cbbGender.SelectedIndex = cbbGender.FindStringExact(gen.Trim());
             dpBirth.Value = birth;
             txtAddress.Text = address;
-            _pass = pass;
         }
 
        public void LoadDataToForm()
@@ -72,8 +71,10 @@ namespace GUI.Admin.Customer
                 DialogResult result = MessageBox.Show("Cập nhật Khách hàng thành công! Bạn muốn quay lại trang chủ không?", "Thông báo", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    Hide();
-                   
+                    this.Close();
+                    ManageCustomer u = new ManageCustomer();
+                    u.LoadData();
+
                 }
             }
             catch (Exception ex)

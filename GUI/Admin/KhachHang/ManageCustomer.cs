@@ -30,48 +30,56 @@ namespace GUI
             setCBB();
             LoadData();
         }
-        public List<object> GetCustomerInfoList()
-        {
-            List<tb_Customer> customerList = _customer.GetAccountsFromTable("tb_Customer");
-
-            List<object> selectedCustomerInfoList = new List<object>();
-
-            foreach (var customer in customerList)
-            {
-                string gender = customer.Gender==true ? "Nữ" : "Nam";
-                var customerInfo = new
-                {
-                    Mãkháchhàng = customer.CustomerID,
-                    Tênkháchhàng = customer.Name,
-                    Sốđiệnthoại = customer.PhoneNumber,
-                    Giớitính = gender,
-                    Ngàysinh = customer.Birthdate,
-                    Địachỉ = customer.Address,
-                    Điểmthưởng = customer.RewardPoints,
-                    Mậtkhẩu = customer.Password
-                };
-
-                selectedCustomerInfoList.Add(customerInfo);
-            }
-
-            return selectedCustomerInfoList;
-        }
+       
 
         public void LoadData()
         {
-            List<object> customerInfoList = GetCustomerInfoList();
-            dataGridView1.DataSource = customerInfoList;
-            dataGridView1.Columns["Mậtkhẩu"].Width = 0;
-            dataGridView1.Columns["Điểmthưởng"].Width = 170;
-            dataGridView1.Columns["Địachỉ"].Width = 170;
-            dataGridView1.Columns["Ngàysinh"].Width = 120;
-            dataGridView1.Columns["Giớitính"].Width = 90;
-            dataGridView1.Columns["Sốđiệnthoại"].Width = 120;
-            dataGridView1.Columns["Tênkháchhàng"].Width = 190;
-            dataGridView1.Columns["Mãkháchhàng"].Width = 100;
-            dataGridView1.RowTemplate.Height = 40;
+            Console.WriteLine("LoadData method called"); // Kiểm tra xem phương thức có được gọi không
+            Account _c = new Account();
+            List<object> customerInfoList = _c.GetCustomerInfoList();
+            if (customerInfoList != null)
+            {
+                Console.WriteLine("Data loaded successfully"); // Kiểm tra xem dữ liệu có được nạp không
 
+                dataGridView1.DataSource = customerInfoList;
+
+                // Kiểm tra và đặt chiều rộng cho các cột nếu chúng tồn tại
+                SetColumnWidth(dataGridView1, "Mậtkhẩu", 0);
+                SetColumnWidth(dataGridView1, "Điểmthưởng", 170);
+                SetColumnWidth(dataGridView1, "Địachỉ", 250);
+                SetColumnWidth(dataGridView1, "Ngàysinh", 160);
+                SetColumnWidth(dataGridView1, "Giớitính", 120);
+                SetColumnWidth(dataGridView1, "Sốđiệnthoại", 170);
+                SetColumnWidth(dataGridView1, "Tênkháchhàng", 270);
+                SetColumnWidth(dataGridView1, "Mãkháchhàng", 150);
+                dataGridView1.RowTemplate.Height = 40;
+            }
+            else
+            {
+                Console.WriteLine("No data found"); // Kiểm tra khi không có dữ liệu
+            }
         }
+
+        private void SetColumnWidth(DataGridView dgv, string columnName, int width)
+        {
+            if (dgv.Columns[columnName] != null)
+            {
+                dgv.Columns[columnName].Width = width;
+                Console.WriteLine($"Column {columnName} width set to {width}"); // Kiểm tra tên và chiều rộng của cột
+            }
+            else
+            {
+                Console.WriteLine($"Column {columnName} not found"); // Kiểm tra khi cột không tồn tại
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine("Button1 clicked"); // Kiểm tra xem sự kiện có được kích hoạt không
+            LoadData();
+        }
+
+
         private void ManageCustomer_Load(object sender, EventArgs e)
         {
             this.ControlBox = false;
@@ -114,37 +122,27 @@ namespace GUI
 
                 string diachi = selectedRow.Cells["Địachỉ"].Value.ToString();
                 int diemthuong = Convert.ToInt32(selectedRow.Cells["Điểmthưởng"].Value.ToString());
-                string matkhau = selectedRow.Cells["Mậtkhẩu"].Value.ToString();
 
 
             
 
-                ChinhSuaKH chinhSuaForm = new ChinhSuaKH(maKH, namekh, sdt, gioitinh,birth, diachi, diemthuong, matkhau);
+                ChinhSuaKH chinhSuaForm = new ChinhSuaKH(maKH, namekh, sdt, gioitinh,birth, diachi, diemthuong);
                 chinhSuaForm.Show();
             }
         }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            LoadData();
-        }
+      
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
             string masp = selectedRow.Cells["Mãkháchhàng"].Value.ToString();
+            _customer.Delete(masp.Trim());
 
-            _customer.Delete(masp);
-
-            DialogResult result = MessageBox.Show("Xóa khách hàng thành công! Bạn muốn quay lại trang chủ không?", "Thông báo", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
-                Hide();
-                MainViewAdmin f1 = new MainViewAdmin();
-                f1.Show();
-            }
-            else
-            {
                 LoadData();
+
             }
         }
 
@@ -165,7 +163,7 @@ namespace GUI
 
                 up.Birthdate = Convert.ToDateTime(selectedRow.Cells["Ngàysinh"].Value);
                 up.Address = selectedRow.Cells["Địachỉ"].Value.ToString();
-                up.Password = selectedRow.Cells["Mãkháchhàng"].Value.ToString();
+                up.Password = HashCode.HashPassword( selectedRow.Cells["Mãkháchhàng"].Value.ToString());
                 _customer.Update(up);
 
                 DialogResult result = MessageBox.Show("Cấp lại mật khẩu cho Khách hàng thành công!", "Thông báo", MessageBoxButtons.OK);
@@ -182,7 +180,7 @@ namespace GUI
             }
 
         }
-       
+
         private void btnHistory_Click(object sender, EventArgs e)
         {
             if (dataGridView1.SelectedRows.Count > 0)
@@ -193,16 +191,28 @@ namespace GUI
                 string sdt = selectedRow.Cells["Sốđiệnthoại"].Value.ToString();
                 DateTime birth = Convert.ToDateTime(selectedRow.Cells["Ngàysinh"].Value);
                 bool gioitinh = (selectedRow.Cells["Giớitính"].Value.ToString() == "Nam") ? true : false;
-
                 string diachi = selectedRow.Cells["Địachỉ"].Value.ToString();
                 int diemthuong = Convert.ToInt32(selectedRow.Cells["Điểmthưởng"].Value.ToString());
                 string matkhau = selectedRow.Cells["Mậtkhẩu"].Value.ToString();
 
+                // Kiểm tra xem có hóa đơn nào trong cơ sở dữ liệu với maKH không
+                using (var context = new PBL3Entities())
+                {
+                    var invoices = context.tb_Invoice.Where(i => i.CustomerID == maKH).ToList();
+                    if (invoices.Count == 0)
+                    {
+                        MessageBox.Show("Không tìm thấy hóa đơn nào cho khách hàng này.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                }
 
-
-
+                // Nếu tìm thấy hóa đơn, mở form HistoryInvoice
                 HistoryInvoice chinhSuaForm = new HistoryInvoice(maKH, namekh);
                 chinhSuaForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn một khách hàng.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -307,6 +317,13 @@ namespace GUI
             }).ToList();
 
             dataGridView1.DataSource = selectedCustomerInfoList;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            LoadData();
 
         }
     }

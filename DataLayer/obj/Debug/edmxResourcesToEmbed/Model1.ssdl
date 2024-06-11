@@ -52,6 +52,19 @@
     <Property Name="image" Type="image" />
     <Property Name="Address" Type="nvarchar" MaxLength="50" />
   </EntityType>
+<<<<<<< HEAD
+  <EntityType Name="tb_Ingredient">
+    <Key>
+      <PropertyRef Name="IngredientID" />
+    </Key>
+    <Property Name="IngredientID" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="IngredientName" Type="nvarchar" MaxLength="40" />
+    <Property Name="Number" Type="int" />
+    <Property Name="ProductID" Type="nchar" MaxLength="10" />
+    <Property Name="Price" Type="float" />
+  </EntityType>
+=======
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
   <EntityType Name="tb_Invoice">
     <Key>
       <PropertyRef Name="InvoiceID" />
@@ -91,7 +104,7 @@
     </Key>
     <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="OvertimeDate" Type="date" />
-    <Property Name="OvertimeHours" Type="int" />
+    <Property Name="HoursOT" Type="int" />
     <Property Name="EmployeeID" Type="nchar" MaxLength="10" />
     <Property Name="coeffSalary" Type="float" />
   </EntityType>
@@ -137,13 +150,12 @@
   </EntityType>
   <EntityType Name="tb_Wage">
     <Key>
-      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="WageID" />
     </Key>
+    <Property Name="WageID" Type="nchar" MaxLength="10" Nullable="false" />
     <Property Name="EmployeeID" Type="nchar" MaxLength="10" Nullable="false" />
-    <Property Name="TimeStart" Type="date" />
-    <Property Name="TimeEnd" Type="date" />
-    <Property Name="WorkingTime" Type="int" />
-    <Property Name="Wage" Type="nchar" MaxLength="10" />
+    <Property Name="MonthWage" Type="datetime" />
+    <Property Name="Wage" Type="float" />
   </EntityType>
   <Association Name="FK_Invoice_Customer">
     <End Role="tb_Customer" Type="Self.tb_Customer" Multiplicity="0..1" />
@@ -291,7 +303,7 @@
   </Association>
   <Association Name="FK_tb_Wage_tb_Employee">
     <End Role="tb_Employee" Type="Self.tb_Employee" Multiplicity="1" />
-    <End Role="tb_Wage" Type="Self.tb_Wage" Multiplicity="0..1" />
+    <End Role="tb_Wage" Type="Self.tb_Wage" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_Employee">
         <PropertyRef Name="EmployeeID" />

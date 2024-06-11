@@ -60,6 +60,12 @@
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="QRCode, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCode.2.2.0\lib\Net46\QRCode.dll</HintPath>
+    </Reference>
+    <Reference Include="QRCoder, Version=1.5.1.0, Culture=neutral, PublicKeyToken=c4ed5b9ae8358a28, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.5.1\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -102,6 +108,15 @@
     <Compile Include="Admin\KhachHang\ThemMoiKH.Designer.cs">
       <DependentUpon>ThemMoiKH.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="Admin\MainViewAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\MainViewAdmin.Designer.cs">
+      <DependentUpon>MainViewAdmin.cs</DependentUpon>
+    </Compile>
+=======
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
     <Compile Include="Admin\NguyenLieu\InputBox.cs" />
     <Compile Include="Admin\Nhanvien\ChinhSuaNV.cs">
       <SubType>Form</SubType>
@@ -158,6 +173,24 @@
     <Compile Include="EMPLOYEE\ManageTable\updateInvoice.Designer.cs">
       <DependentUpon>updateInvoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="EMPLOYEE\ManageTime\ManageTime.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMPLOYEE\ManageTime\ManageTime.Designer.cs">
+      <DependentUpon>ManageTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYEE\ManageTime\OvertimeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMPLOYEE\ManageTime\OvertimeForm.Designer.cs">
+      <DependentUpon>OvertimeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EMPLOYEE\SalaryE\DetailSalary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EMPLOYEE\SalaryE\DetailSalary.Designer.cs">
+      <DependentUpon>DetailSalary.cs</DependentUpon>
+    </Compile>
     <Compile Include="EMPLOYEE\TaiKhoanNhanVien\accountNV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -176,12 +209,6 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Admin\MainViewAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Admin\MainViewAdmin.Designer.cs">
-      <DependentUpon>MainViewAdmin.cs</DependentUpon>
-    </Compile>
     <Compile Include="USER\DatBan\OrderFood.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -193,6 +220,12 @@
     </Compile>
     <Compile Include="USER\DatBan\OrderForm.Designer.cs">
       <DependentUpon>OrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="USER\DatBan\QrCodeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="USER\DatBan\QrCodeForm.Designer.cs">
+      <DependentUpon>QrCodeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="USER\DatBan\ucProduct.cs">
       <SubType>UserControl</SubType>
@@ -295,6 +328,9 @@
     <EmbeddedResource Include="Admin\KhachHang\ThemMoiKH.resx">
       <DependentUpon>ThemMoiKH.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\MainViewAdmin.resx">
+      <DependentUpon>MainViewAdmin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\Nhanvien\ChinhSuaNV.resx">
       <DependentUpon>ChinhSuaNV.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,6 +358,15 @@
     <EmbeddedResource Include="EMPLOYEE\ManageTable\updateInvoice.resx">
       <DependentUpon>updateInvoice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EMPLOYEE\ManageTime\ManageTime.resx">
+      <DependentUpon>ManageTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMPLOYEE\ManageTime\OvertimeForm.resx">
+      <DependentUpon>OvertimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EMPLOYEE\SalaryE\DetailSalary.resx">
+      <DependentUpon>DetailSalary.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EMPLOYEE\TaiKhoanNhanVien\accountNV.resx">
       <DependentUpon>accountNV.cs</DependentUpon>
     </EmbeddedResource>
@@ -330,9 +375,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Admin\MainViewAdmin.resx">
-      <DependentUpon>MainViewAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EMPLOYEE\MainViewEmployee.resx">
       <DependentUpon>MainViewEmployee.cs</DependentUpon>
@@ -392,6 +434,7 @@
     <EmbeddedResource Include="USER\TaiKhoan\AccountForm1.resx">
       <DependentUpon>AccountForm1.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -422,6 +465,9 @@
 <<<<<<< HEAD
   <ItemGroup />
 =======
+<<<<<<< HEAD
+  <ItemGroup />
+=======
   <ItemGroup>
     <Folder Include="Admin\thongke\" />
   </ItemGroup>
@@ -438,5 +484,6 @@
     <None Include="Resources\icons8-time-48.png" />
   </ItemGroup>
 >>>>>>> ad55cb5d6d7510782e23653ebdce63afe2786ff0
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

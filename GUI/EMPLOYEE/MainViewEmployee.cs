@@ -20,7 +20,12 @@ using BusinessLayer;
 using DataLayer;
 using GUI.EMPLOYEE.ManageTable;
 using GUI.EMPLOYEE.TaiKhoanNhanVien;
+<<<<<<< HEAD
+using GUI.EMPLOYEE.Salary;
+using GUI.EMPLOYEE.ManageTime;
+=======
 using GUI.EMPLOYEE.tinhluongnhanvien;
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
 namespace GUI
 {
     public partial class MainViewEmployee : Form
@@ -103,7 +108,11 @@ namespace GUI
         private void iconButton2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
+<<<<<<< HEAD
+            OpenChildForm(new DetailSalary(_id));
+=======
             OpenChildForm(new tinhluong(_id));
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
 
         }
 
@@ -116,12 +125,8 @@ namespace GUI
 
         private void iconButton4_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Bạn có muốn đăng xuất không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                this.Dispose();
-            }
+            ActivateButton(sender, RGBColors.color3);
+            OpenChildForm(new ManageTime(_id));
         }
 
         private void iconButton1_Click_1(object sender, EventArgs e)
@@ -178,6 +183,20 @@ namespace GUI
             lblHome.Text = childForm.Text;
         }
 
+<<<<<<< HEAD
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có muốn đăng xuất không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Dispose();
+                Login u = new Login();
+                u.Show();
+            }
+        }
+=======
        
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
     }
 }

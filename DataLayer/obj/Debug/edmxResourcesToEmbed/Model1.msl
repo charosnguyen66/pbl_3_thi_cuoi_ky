@@ -58,6 +58,20 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
+    <EntitySetMapping Name="tb_Ingredient">
+      <EntityTypeMapping TypeName="PBL3Model.tb_Ingredient">
+        <MappingFragment StoreEntitySet="tb_Ingredient">
+          <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
+          <ScalarProperty Name="IngredientName" ColumnName="IngredientName" />
+          <ScalarProperty Name="Number" ColumnName="Number" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+=======
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
     <EntitySetMapping Name="tb_Invoice">
       <EntityTypeMapping TypeName="PBL3Model.tb_Invoice">
         <MappingFragment StoreEntitySet="tb_Invoice">
@@ -99,7 +113,7 @@
         <MappingFragment StoreEntitySet="tb_OverTime">
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="OvertimeDate" ColumnName="OvertimeDate" />
-          <ScalarProperty Name="OvertimeHours" ColumnName="OvertimeHours" />
+          <ScalarProperty Name="HoursOT" ColumnName="HoursOT" />
           <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
           <ScalarProperty Name="coeffSalary" ColumnName="coeffSalary" />
         </MappingFragment>
@@ -152,10 +166,9 @@
     <EntitySetMapping Name="tb_Wage">
       <EntityTypeMapping TypeName="PBL3Model.tb_Wage">
         <MappingFragment StoreEntitySet="tb_Wage">
+          <ScalarProperty Name="WageID" ColumnName="WageID" />
           <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-          <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
-          <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
-          <ScalarProperty Name="WorkingTime" ColumnName="WorkingTime" />
+          <ScalarProperty Name="MonthWage" ColumnName="MonthWage" />
           <ScalarProperty Name="Wage" ColumnName="Wage" />
         </MappingFragment>
       </EntityTypeMapping>

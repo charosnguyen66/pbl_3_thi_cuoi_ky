@@ -180,7 +180,7 @@ namespace GUI.USER.DatBan
                                     string dateTimeString = time + " " + date; // Kết hợp giờ và phút với ngày, tháng và năm
                                     TimeOrde.dateNhan = dateTimeString;
 
-                                     MessageBox.Show(dateTimeString);
+                                     //MessageBox.Show(dateTimeString);
                                     mainViewCustomer.ActivateButton(iconButton2, RGBColors.color2);
                                     mainViewCustomer.OpenChildForm(new OrderFood((ui as UserControl1).TableName));
                                 }

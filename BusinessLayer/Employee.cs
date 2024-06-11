@@ -16,30 +16,38 @@ namespace BusinessLayer
         private PBL3Entities db = new PBL3Entities();
         public int LoginAs(string username, string password)
         {
-            var employee = db.tb_Employee.FirstOrDefault(e => e.EmployeeID.Trim() == username && e.Password.Trim() == password);
-            if (employee != null)
+            // Hash the input password
+            string hashedPassword = HashCode.HashPassword(password.Trim());
+
+            // Fetch the employee and check password in memory
+            var employee = db.tb_Employee.FirstOrDefault(e => e.EmployeeID.Trim() == username);
+            if (employee != null && employee.Password.Trim() == hashedPassword)
             {
                 Console.WriteLine("User is an employee");
                 return 1;
             }
 
-            var customer = db.tb_Customer.FirstOrDefault(c => c.CustomerID.Trim() == username && c.Password.Trim() == password);
-            if (customer != null)
+            // Fetch the customer and check password in memory
+            var customer = db.tb_Customer.FirstOrDefault(c => c.CustomerID.Trim() == username);
+            if (customer != null && customer.Password.Trim() == hashedPassword)
             {
                 Console.WriteLine("User is a customer");
                 return 2;
             }
 
-            // Kiểm tra nếu là quản trị viên
-            if (username == "Admin" && password == "Abc123")
+            // Fetch the admin and check password in memory
+            var admin = db.tb_Admin.FirstOrDefault(a => a.Username.Trim() == username);
+            if (admin != null && admin.Password.Trim() == hashedPassword)
             {
                 Console.WriteLine("User is an admin");
                 return 3;
             }
 
-            // Nếu không phải là nhân viên, khách hàng hoặc quản trị viên
+            // If not an employee, customer, or admin
             return 0;
         }
+
+
         public List<tb_Employee> GetAccountsFromTable(string tab)
         {
             return db.tb_Employee.ToList();
@@ -209,19 +217,34 @@ namespace BusinessLayer
         }
 
 
-        public void Delete(string id)
-        {
-            try
+        
+            public void Delete(string employeeId)
             {
-                var _dt = db.tb_Employee.FirstOrDefault(x => x.EmployeeID == id);
-                db.tb_Employee.Remove(_dt);
-                db.SaveChanges();
+                using (var context = new PBL3Entities())
+                {
+                    // Xóa các bản ghi trong tb_Wage
+                    var wages = context.tb_Wage.Where(w => w.EmployeeID == employeeId).ToList();
+                    context.tb_Wage.RemoveRange(wages);
 
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+                    // Xóa các bản ghi trong tb_Overtime
+                    var overtimes = context.tb_OverTime.Where(o => o.EmployeeID == employeeId).ToList();
+                    context.tb_OverTime.RemoveRange(overtimes);
+
+                    // Xóa các bản ghi trong tb_SickOff
+                    var sickoffs = context.tb_SickOff.Where(s => s.EmployeeID == employeeId).ToList();
+                    context.tb_SickOff.RemoveRange(sickoffs);
+
+                    // Xóa bản ghi trong tb_Employee
+                    var employee = context.tb_Employee.SingleOrDefault(e => e.EmployeeID == employeeId);
+                    if (employee != null)
+                    {
+                        context.tb_Employee.Remove(employee);
+                    }
+
+                    // Lưu các thay đổi
+                    context.SaveChanges();
+                }
         }
+
     }
 }

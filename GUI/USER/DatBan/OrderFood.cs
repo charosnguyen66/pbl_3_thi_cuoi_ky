@@ -1,4 +1,5 @@
-﻿using BusinessLayer;
+﻿// OrderFood.cs
+using BusinessLayer;
 using DataLayer;
 using FontAwesome.Sharp;
 using GUI.Admin.Customer;
@@ -13,11 +14,13 @@ using System.Data.Entity.Infrastructure;
 using System.Data.Entity.Validation;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QRCode;
 namespace GUI.USER.DatBan
 {
     public partial class OrderFood : Form
@@ -30,6 +33,8 @@ namespace GUI.USER.DatBan
         Invoice_Detail _invoice_Detail;
         Ingredient _ingre;
         DiningTable _table;
+        private bool isPaymentSelected = false;
+
         public OrderFood(string nameTable = null)
         {
             InitializeComponent();
@@ -43,7 +48,16 @@ namespace GUI.USER.DatBan
             _table = new DiningTable();
             categoryNames = GetCategoryNames();
             LoadCategory();
+            LoadCBB();
             LoadProduct();
+        }
+        public void LoadCBB()
+        {
+            cbbThanhToan.Items.Clear();
+            cbbThanhToan.Items.Add(new ComboBoxItem { Text = "Vui lòng chọn", Value = "" });
+            cbbThanhToan.Items.Add(new ComboBoxItem { Text = "Internet Banking", Value = "P1" });
+            cbbThanhToan.Items.Add(new ComboBoxItem { Text = "Thanh toán trực tiếp", Value = "P2" });
+            cbbThanhToan.SelectedIndex = 0;
         }
 
         private void InitializeDataGridView()
@@ -59,9 +73,9 @@ namespace GUI.USER.DatBan
 
         private void LoadProduct()
         {
-            pnMonAn.Controls.Clear(); // Consider whether this is needed
+            pnMonAn.Controls.Clear();
 
-            List<tb_Product> list = _product.GetProductsFromTable("tb_Product");
+            List<tb_Product> list = _product.GetAvailableProducts();
             if (list != null)
             {
                 foreach (var table in list)
@@ -95,9 +109,9 @@ namespace GUI.USER.DatBan
 
         private void LoadProduct(string id)
         {
-            pnMonAn.Controls.Clear(); // Consider whether this is needed
+            pnMonAn.Controls.Clear();
 
-            List<tb_Product> list = _product.GetProductsByCategory1("tb_Product", id);
+            List<tb_Product> list = _product.GetAvailableProductsByCategory(id);
             if (list != null)
             {
                 foreach (var table in list)
@@ -131,7 +145,6 @@ namespace GUI.USER.DatBan
 
         private void LoadCategory()
         {
-
             List<tb_Category> list = _category.GetAccountsFromTable();
 
             cbbTheLoai.Items.Clear();
@@ -194,6 +207,11 @@ namespace GUI.USER.DatBan
 
         public void AddProductToDataGridView(ucProduct product)
         {
+            if (isPaymentSelected)
+            {
+                MessageBox.Show("Bạn không thể thêm món khi đã chọn thanh toán.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             // Kiểm tra xem có đủ nguyên liệu cho sản phẩm không
             if (!_ingre.setIngrdient(product.id, 1))
             {
@@ -239,7 +257,6 @@ namespace GUI.USER.DatBan
             }
         }
 
-
         private void txtTimKiem_TextChanged(object sender, EventArgs e)
         {
             foreach (Control control in pnMonAn.Controls)
@@ -280,7 +297,6 @@ namespace GUI.USER.DatBan
                 MessageBox.Show("Vui lòng chọn hàng cần xóa.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
-
 
         public string GenerateNewInvoiceID()
         {
@@ -334,6 +350,7 @@ namespace GUI.USER.DatBan
                 throw new Exception("An error occurred while updating the entries. See the inner exception for details: " + sb.ToString(), ex);
             }
         }
+
         private string GenerateNewIDDetail()
         {
             Invoice_Detail invoiceService = new Invoice_Detail();
@@ -351,6 +368,7 @@ namespace GUI.USER.DatBan
 
             return "CT" + number.ToString("D2");
         }
+
         private void iconButton1_Click(object sender, EventArgs e)
         {
             DialogResult confirmResult = MessageBox.Show("Bạn có chắc chắn muốn thêm chi tiết hóa đơn không?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -359,21 +377,28 @@ namespace GUI.USER.DatBan
             {
                 string[] tableNames = _tableName.Split(new char[] { ',', ' ' }, StringSplitOptions.RemoveEmptyEntries);
                 string invoiceID = GenerateNewInvoiceID();
+
+                // Get the selected payment method
+                string paymentID = "";
+                if (cbbThanhToan.SelectedItem is ComboBoxItem selectedItem)
+                {
+                    paymentID = selectedItem.Value.ToString();
+                }
+
                 try
                 {
                     var newInvoice = new tb_Invoice
-                    { 
+                    {
                         InvoiceID = invoiceID,
                         CustomerID = UserSession.UserID,
                         OrderDate = DateTime.Now,
-                        PaymentID = null,
+                        PaymentID = paymentID,
                         Status = "Đã đặt",
                         ReserveDate = TimeOrde.dateNhan,
                         TableID = tableNames[0].Trim(),
+                        Note = _tableName
                     };
-                   
-                        newInvoice.Note =   _tableName;
-                    
+
                     _invoice.AddNew(newInvoice);
                     foreach (DataGridViewRow row in dgvSP.Rows)
                     {
@@ -393,26 +418,36 @@ namespace GUI.USER.DatBan
                         foreach (var i in tableNames)
                         {
                             _table.changeStatus(i);
-
                         }
 
                         _invoice_Detail.AddNew(newDetail);
-                        MessageBox.Show("Đặt món thành công, Cám ơn quý khách đã ủng hộ chúng tôi. Vui lòng xem thông tin để đến đúng giờ");
-
-
                     }
-                    
 
-                    }
+                    _invoice.SaveChangesWithValidation();
+
+                }
                 catch (Exception ex)
                 {
-                    var innerExceptionMessage = ex.InnerException != null ? ex.InnerException.Message : "No inner exception";
+                    var innerExceptionMessage = GetInnerExceptionMessages(ex);
                     MessageBox.Show($"Có lỗi xảy ra: {ex.Message}\nChi tiết: {innerExceptionMessage}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Console.WriteLine(ex.ToString());
                 }
-                }
+
+                MessageBox.Show("Đặt món thành công, Cám ơn quý khách đã ủng hộ chúng tôi. Vui lòng xem thông tin để đến đúng giờ");
+            }
         }
 
+        private string GetInnerExceptionMessages(Exception ex)
+        {
+            StringBuilder sb = new StringBuilder();
+            Exception inner = ex;
+            while (inner != null)
+            {
+                sb.AppendLine(inner.Message);
+                inner = inner.InnerException;
+            }
+            return sb.ToString();
+        }
 
 
         private void UpdateIngredientQuantity(PBL3Entities context, string productID, int quantity)
@@ -434,12 +469,50 @@ namespace GUI.USER.DatBan
         {
 
         }
+
+        private void cbbThanhToan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbbThanhToan.SelectedItem.ToString() != "Vui lòng chọn")
+    {
+        isPaymentSelected = true;
+        pnMonAn.Enabled = false; // Disable product panel
+
+        if (cbbThanhToan.SelectedItem.ToString() == "Internet Banking")
+        {
+            GenerateAndDisplayQrCode();
+        }
     }
-}
+    else
+    {
+        isPaymentSelected = false;
+        pnMonAn.Enabled = true; // Enable product panel
+    }
+        }
+      
 
+        private void GenerateAndDisplayQrCode()
+        {
+            // Example QR code content, replace with actual payment information
+            string qrCodeContent = "Internet Banking Payment Information";
 
+            // Generate QR code
+            var qrGenerator = new QRCoder.QRCodeGenerator();
+            var qrCodeData = qrGenerator.CreateQrCode(qrCodeContent, QRCoder.QRCodeGenerator.ECCLevel.Q);
+            var qrCode = new QRCoder.QRCode(qrCodeData);
 
+            // Convert QR code to bitmap
+            using (var qrCodeBitmap = qrCode.GetGraphic(20))
+            {
+                // Open the new form and display the QR code
+                QrCodeForm qrCodeForm = new QrCodeForm(new Bitmap(qrCodeBitmap));
+                qrCodeForm.ShowDialog();
+            }
+        }
 
+        private void OrderFood_Load(object sender, EventArgs e)
+        {
 
-
-
+        }
+    }
+    }

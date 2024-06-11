@@ -29,22 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainViewAdmin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.menuContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnTaiKhoan = new System.Windows.Forms.Button();
+            this.btnTaiKhoan = new FontAwesome.Sharp.IconButton();
             this.button2 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.pnThongKe = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnThongKe = new System.Windows.Forms.Button();
-            this.pnThucDon = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnThucDon = new System.Windows.Forms.Button();
-            this.pnNguyenLieu = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnNguyenLieu = new System.Windows.Forms.Button();
+            this.btnThongKe = new FontAwesome.Sharp.IconButton();
             this.pnDangXuat = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnDangXuat = new System.Windows.Forms.Button();
+            this.btnDangXuat = new FontAwesome.Sharp.IconButton();
+            this.pnThucDon = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnThucDon = new FontAwesome.Sharp.IconButton();
+            this.pnNguyenLieu = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnNguyenLieu = new FontAwesome.Sharp.IconButton();
             this.menuTransition = new System.Windows.Forms.Timer(this.components);
             this.sidebarTransition = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
@@ -52,9 +51,9 @@
             this.sidebar.SuspendLayout();
             this.menuContainer.SuspendLayout();
             this.pnThongKe.SuspendLayout();
+            this.pnDangXuat.SuspendLayout();
             this.pnThucDon.SuspendLayout();
             this.pnNguyenLieu.SuspendLayout();
-            this.pnDangXuat.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,8 +83,8 @@
             this.sidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
             this.sidebar.Controls.Add(this.menuContainer);
             this.sidebar.Controls.Add(this.pnThongKe);
-            this.sidebar.Controls.Add(this.pnNguyenLieu);
             this.sidebar.Controls.Add(this.pnThucDon);
+            this.sidebar.Controls.Add(this.pnNguyenLieu);
             this.sidebar.Controls.Add(this.pnDangXuat);
             this.sidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebar.Location = new System.Drawing.Point(0, 39);
@@ -102,32 +101,33 @@
             this.menuContainer.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.menuContainer.Location = new System.Drawing.Point(3, 3);
             this.menuContainer.Name = "menuContainer";
-            this.menuContainer.Size = new System.Drawing.Size(241, 75);
+            this.menuContainer.Size = new System.Drawing.Size(241, 76);
             this.menuContainer.TabIndex = 7;
             // 
             // btnTaiKhoan
             // 
-            this.btnTaiKhoan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.btnTaiKhoan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTaiKhoan.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaiKhoan.FlatAppearance.BorderSize = 0;
+            this.btnTaiKhoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTaiKhoan.Font = new System.Drawing.Font("Rockwell", 9F);
             this.btnTaiKhoan.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnTaiKhoan.Image = ((System.Drawing.Image)(resources.GetObject("btnTaiKhoan.Image")));
+            this.btnTaiKhoan.IconChar = FontAwesome.Sharp.IconChar.UserGear;
+            this.btnTaiKhoan.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTaiKhoan.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnTaiKhoan.IconSize = 30;
             this.btnTaiKhoan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTaiKhoan.Location = new System.Drawing.Point(3, 3);
             this.btnTaiKhoan.Name = "btnTaiKhoan";
-            this.btnTaiKhoan.Size = new System.Drawing.Size(238, 70);
-            this.btnTaiKhoan.TabIndex = 4;
+            this.btnTaiKhoan.Size = new System.Drawing.Size(238, 68);
+            this.btnTaiKhoan.TabIndex = 12;
             this.btnTaiKhoan.Text = "Quản lý tài khoản";
-            this.btnTaiKhoan.UseVisualStyleBackColor = false;
-            this.btnTaiKhoan.Click += new System.EventHandler(this.manage_Click);
+            this.btnTaiKhoan.UseVisualStyleBackColor = true;
+            this.btnTaiKhoan.Click += new System.EventHandler(this.btnTaiKhoan_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(247, 3);
             this.button2.Name = "button2";
@@ -143,7 +143,6 @@
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button7.Location = new System.Drawing.Point(514, 3);
             this.button7.Name = "button7";
@@ -158,7 +157,7 @@
             this.pnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
             this.pnThongKe.Controls.Add(this.btnThongKe);
             this.pnThongKe.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnThongKe.Location = new System.Drawing.Point(3, 84);
+            this.pnThongKe.Location = new System.Drawing.Point(3, 85);
             this.pnThongKe.Name = "pnThongKe";
             this.pnThongKe.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.pnThongKe.Size = new System.Drawing.Size(241, 74);
@@ -166,21 +165,54 @@
             // 
             // btnThongKe
             // 
-            this.btnThongKe.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.btnThongKe.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.pnThongKe.SetFlowBreak(this.btnThongKe, true);
-            this.btnThongKe.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThongKe.FlatAppearance.BorderSize = 0;
+            this.btnThongKe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThongKe.Font = new System.Drawing.Font("Rockwell", 9F);
             this.btnThongKe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThongKe.Image = ((System.Drawing.Image)(resources.GetObject("btnThongKe.Image")));
+            this.btnThongKe.IconChar = FontAwesome.Sharp.IconChar.SquarePollVertical;
+            this.btnThongKe.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnThongKe.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThongKe.IconSize = 30;
             this.btnThongKe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThongKe.Location = new System.Drawing.Point(3, 23);
+            this.btnThongKe.Location = new System.Drawing.Point(0, 20);
+            this.btnThongKe.Margin = new System.Windows.Forms.Padding(0);
             this.btnThongKe.Name = "btnThongKe";
-            this.btnThongKe.Size = new System.Drawing.Size(238, 35);
-            this.btnThongKe.TabIndex = 5;
+            this.btnThongKe.Size = new System.Drawing.Size(238, 37);
+            this.btnThongKe.TabIndex = 13;
             this.btnThongKe.Text = "Thống kê";
-            this.btnThongKe.UseVisualStyleBackColor = false;
-            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click);
+            this.btnThongKe.UseVisualStyleBackColor = true;
+            this.btnThongKe.Click += new System.EventHandler(this.btnThongKe_Click_2);
+            // 
+            // pnDangXuat
+            // 
+            this.pnDangXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
+            this.pnDangXuat.Controls.Add(this.btnDangXuat);
+            this.pnDangXuat.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.pnDangXuat.Location = new System.Drawing.Point(3, 325);
+            this.pnDangXuat.Name = "pnDangXuat";
+            this.pnDangXuat.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
+            this.pnDangXuat.Size = new System.Drawing.Size(241, 74);
+            this.pnDangXuat.TabIndex = 10;
+            // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.FlatAppearance.BorderSize = 0;
+            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangXuat.Font = new System.Drawing.Font("Rockwell", 9F);
+            this.btnDangXuat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDangXuat.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
+            this.btnDangXuat.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDangXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDangXuat.IconSize = 30;
+            this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 20);
+            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(0);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(238, 37);
+            this.btnDangXuat.TabIndex = 16;
+            this.btnDangXuat.Text = "Đăng xuất";
+            this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click_1);
             // 
             // pnThucDon
             // 
@@ -188,7 +220,7 @@
             this.pnThucDon.Controls.Add(this.btnThucDon);
             this.pnThucDon.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.pnThucDon.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnThucDon.Location = new System.Drawing.Point(3, 244);
+            this.pnThucDon.Location = new System.Drawing.Point(3, 165);
             this.pnThucDon.Name = "pnThucDon";
             this.pnThucDon.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.pnThucDon.Size = new System.Drawing.Size(241, 74);
@@ -197,30 +229,30 @@
             // 
             // btnThucDon
             // 
-            this.btnThucDon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.btnThucDon.Cursor = System.Windows.Forms.Cursors.WaitCursor;
-            this.btnThucDon.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnThucDon.FlatAppearance.BorderSize = 0;
-            this.btnThucDon.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnThucDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnThucDon.Font = new System.Drawing.Font("Rockwell", 9F);
             this.btnThucDon.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnThucDon.Image = ((System.Drawing.Image)(resources.GetObject("btnThucDon.Image")));
+            this.btnThucDon.IconChar = FontAwesome.Sharp.IconChar.Utensils;
+            this.btnThucDon.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnThucDon.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnThucDon.IconSize = 30;
             this.btnThucDon.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThucDon.Location = new System.Drawing.Point(3, 23);
+            this.btnThucDon.Location = new System.Drawing.Point(0, 20);
+            this.btnThucDon.Margin = new System.Windows.Forms.Padding(0);
             this.btnThucDon.Name = "btnThucDon";
-            this.btnThucDon.Size = new System.Drawing.Size(238, 35);
-            this.btnThucDon.TabIndex = 6;
-            this.btnThucDon.Text = "Quản lý thực đơn";
-            this.btnThucDon.UseMnemonic = false;
-            this.btnThucDon.UseVisualStyleBackColor = false;
-            this.btnThucDon.UseWaitCursor = true;
-            this.btnThucDon.Click += new System.EventHandler(this.btnThucDon_Click);
+            this.btnThucDon.Size = new System.Drawing.Size(238, 37);
+            this.btnThucDon.TabIndex = 15;
+            this.btnThucDon.Text = "       Quản lý thực đơn";
+            this.btnThucDon.UseVisualStyleBackColor = true;
+            this.btnThucDon.Click += new System.EventHandler(this.btnThucDon_Click_1);
             // 
             // pnNguyenLieu
             // 
             this.pnNguyenLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
             this.pnNguyenLieu.Controls.Add(this.btnNguyenLieu);
             this.pnNguyenLieu.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnNguyenLieu.Location = new System.Drawing.Point(3, 164);
+            this.pnNguyenLieu.Location = new System.Drawing.Point(3, 245);
             this.pnNguyenLieu.Name = "pnNguyenLieu";
             this.pnNguyenLieu.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
             this.pnNguyenLieu.Size = new System.Drawing.Size(241, 74);
@@ -228,48 +260,23 @@
             // 
             // btnNguyenLieu
             // 
-            this.btnNguyenLieu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.btnNguyenLieu.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNguyenLieu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNguyenLieu.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNguyenLieu.FlatAppearance.BorderSize = 0;
+            this.btnNguyenLieu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNguyenLieu.Font = new System.Drawing.Font("Rockwell", 9F);
             this.btnNguyenLieu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnNguyenLieu.Image = ((System.Drawing.Image)(resources.GetObject("btnNguyenLieu.Image")));
+            this.btnNguyenLieu.IconChar = FontAwesome.Sharp.IconChar.Warehouse;
+            this.btnNguyenLieu.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnNguyenLieu.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNguyenLieu.IconSize = 30;
             this.btnNguyenLieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNguyenLieu.Location = new System.Drawing.Point(3, 23);
+            this.btnNguyenLieu.Location = new System.Drawing.Point(0, 20);
+            this.btnNguyenLieu.Margin = new System.Windows.Forms.Padding(0);
             this.btnNguyenLieu.Name = "btnNguyenLieu";
-            this.btnNguyenLieu.Size = new System.Drawing.Size(238, 35);
-            this.btnNguyenLieu.TabIndex = 4;
-            this.btnNguyenLieu.Text = "      Quản lý nguyên liệu";
-            this.btnNguyenLieu.UseVisualStyleBackColor = false;
-            this.btnNguyenLieu.Click += new System.EventHandler(this.btnNguyenLieu_Click);
-            // 
-            // pnDangXuat
-            // 
-            this.pnDangXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.pnDangXuat.Controls.Add(this.btnDangXuat);
-            this.pnDangXuat.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.pnDangXuat.Location = new System.Drawing.Point(3, 324);
-            this.pnDangXuat.Name = "pnDangXuat";
-            this.pnDangXuat.Padding = new System.Windows.Forms.Padding(0, 20, 0, 0);
-            this.pnDangXuat.Size = new System.Drawing.Size(241, 74);
-            this.pnDangXuat.TabIndex = 10;
-            // 
-            // btnDangXuat
-            // 
-            this.btnDangXuat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.btnDangXuat.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnDangXuat.Font = new System.Drawing.Font("Rockwell", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangXuat.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDangXuat.Image = ((System.Drawing.Image)(resources.GetObject("btnDangXuat.Image")));
-            this.btnDangXuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDangXuat.Location = new System.Drawing.Point(0, 20);
-            this.btnDangXuat.Margin = new System.Windows.Forms.Padding(0);
-            this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(238, 35);
-            this.btnDangXuat.TabIndex = 6;
-            this.btnDangXuat.Text = "Đăng xuất";
-            this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnNguyenLieu.Size = new System.Drawing.Size(238, 37);
+            this.btnNguyenLieu.TabIndex = 14;
+            this.btnNguyenLieu.Text = "       Quản lý nguyên liệu";
+            this.btnNguyenLieu.UseVisualStyleBackColor = true;
+            this.btnNguyenLieu.Click += new System.EventHandler(this.btnNguyenLieu_Click_1);
             // 
             // menuTransition
             // 
@@ -298,9 +305,9 @@
             this.sidebar.ResumeLayout(false);
             this.menuContainer.ResumeLayout(false);
             this.pnThongKe.ResumeLayout(false);
+            this.pnDangXuat.ResumeLayout(false);
             this.pnThucDon.ResumeLayout(false);
             this.pnNguyenLieu.ResumeLayout(false);
-            this.pnDangXuat.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -311,18 +318,18 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel sidebar;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button btnNguyenLieu;
-        private System.Windows.Forms.Button btnThongKe;
-        private System.Windows.Forms.Button btnThucDon;
         private System.Windows.Forms.FlowLayoutPanel menuContainer;
-        private System.Windows.Forms.Button btnTaiKhoan;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Timer menuTransition;
         private System.Windows.Forms.FlowLayoutPanel pnDangXuat;
-        private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.Timer sidebarTransition;
         private System.Windows.Forms.FlowLayoutPanel pnThucDon;
         private System.Windows.Forms.FlowLayoutPanel pnThongKe;
         private System.Windows.Forms.FlowLayoutPanel pnNguyenLieu;
+        private FontAwesome.Sharp.IconButton btnTaiKhoan;
+        private FontAwesome.Sharp.IconButton btnThongKe;
+        private FontAwesome.Sharp.IconButton btnDangXuat;
+        private FontAwesome.Sharp.IconButton btnThucDon;
+        private FontAwesome.Sharp.IconButton btnNguyenLieu;
     }
 }

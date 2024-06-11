@@ -110,6 +110,11 @@ namespace GUI.Admin.Nhanvien
             }
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void cbbTypeEm_SelectedIndexChanged(object sender, EventArgs e)
         {
 

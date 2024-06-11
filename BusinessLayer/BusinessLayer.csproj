@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Account.cs" />
+    <Compile Include="AdminManager.cs" />
     <Compile Include="Category.cs" />
     <Compile Include="DiningTable.cs" />
     <Compile Include="DTO\CBBItem.cs" />
@@ -77,6 +78,10 @@
     <Compile Include="DTO\Invoice_DTO.cs" />
     <Compile Include="DTO\NhanVien_DTO.cs" />
     <Compile Include="DTO\Print_DTO.cs" />
+<<<<<<< HEAD
+    <Compile Include="DTO\ProductDTO.cs" />
+=======
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
     <Compile Include="DTO\SalaryEmployee.cs" />
     <Compile Include="DTO\THONGKE_DTO.cs" />
     <Compile Include="Employee.cs" />

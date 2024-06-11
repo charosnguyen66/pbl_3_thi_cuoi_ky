@@ -43,7 +43,11 @@
             // 
             this.chartMon.Location = new System.Drawing.Point(575, 29);
             this.chartMon.Name = "chartMon";
+<<<<<<< HEAD
+            this.chartMon.Size = new System.Drawing.Size(756, 292);
+=======
             this.chartMon.Size = new System.Drawing.Size(756, 338);
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             this.chartMon.TabIndex = 0;
             this.chartMon.Text = "cartesianChart1";
             // 
@@ -72,7 +76,11 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
+            this.dataGridView1.Location = new System.Drawing.Point(35, 342);
+=======
             this.dataGridView1.Location = new System.Drawing.Point(35, 373);
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -127,7 +135,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
+            this.ClientSize = new System.Drawing.Size(1458, 677);
+=======
             this.ClientSize = new System.Drawing.Size(1390, 721);
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblThang);
             this.Controls.Add(this.cbbThang);
@@ -156,4 +168,8 @@
         private System.Windows.Forms.Label lblThang;
         private System.Windows.Forms.Label label3;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef

@@ -107,7 +107,7 @@ namespace GUI.USER.TaiKhoan
             {
                 if (i.CustomerID.Trim() == _id.Trim())
                 {
-                    if(i.Password.Trim() != txtOldPass.Text.Trim())
+                    if(i.Password.Trim() != HashCode.HashPassword( txtOldPass.Text.Trim()))
                     {
                         MessageBox.Show("Mật khẩu cũ không khớp, Vui lòng nhập lại!");
                         txtOldPass.ForeColor = Color.Red;

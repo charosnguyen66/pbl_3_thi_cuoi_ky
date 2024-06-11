@@ -124,6 +124,8 @@ namespace GUI
             if (result == DialogResult.Yes)
             {
                 this.Dispose();
+                Login u = new Login();
+                u.Show();
             }
         }
 

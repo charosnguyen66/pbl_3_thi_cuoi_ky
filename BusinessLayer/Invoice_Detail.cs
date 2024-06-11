@@ -21,6 +21,27 @@
                 return db.tb_Invoice_Detail.ToList();
 
             }
+<<<<<<< HEAD
+        public List<THONGKE_DTO> GetRevenueByMonth(int month)
+        {
+            using (var context = new PBL3Entities()) // Replace with your actual DbContext
+            {
+                var revenueList = (from detail in context.tb_Invoice_Detail
+                                   join invoice in context.tb_Invoice on detail.InvoiceID equals invoice.InvoiceID
+                                   join product in context.tb_Product on detail.ProductID equals product.ProductID
+                                   where invoice.OrderDate.Value.Month == month
+                                   group new { detail, product, invoice } by new { product.ProductName, invoice.OrderDate } into g
+                                   select new THONGKE_DTO
+                                   {
+                                       tenMon = g.Key.ProductName,
+                                       tongTien = (double)g.Sum(x => x.detail.Quanlity * x.product.Price),
+                                       thoigian = g.Key.OrderDate.Value.ToString("yyyy-MM-dd")
+                                   }).ToList();
+
+                return revenueList;
+            }
+        }
+
         public List<THONGKE_DTO> gett(int targetMonth)
         {
             using (var db = new PBL3Entities())
@@ -55,6 +76,42 @@
             }
         }
 
+=======
+        public List<THONGKE_DTO> gett(int targetMonth)
+        {
+            using (var db = new PBL3Entities())
+            {
+                var query = from id in db.tb_Invoice_Detail
+                            join p in db.tb_Product on id.ProductID equals p.ProductID
+                            join i in db.tb_Invoice on id.InvoiceID equals i.InvoiceID
+                            where i.OrderDate.Value.Month == targetMonth // Lọc theo tháng được chỉ định
+                            group new { id, p, i } by new { i.OrderDate.Value.Year, i.OrderDate.Value.Month, p.ProductID, p.ProductName } into g
+                            let totalRevenue = g.Sum(x => x.id.Quanlity * x.p.Price)
+                            orderby g.Key.Year, g.Key.Month, totalRevenue descending
+                            select new
+                            {
+                                Year = g.Key.Year,
+                                Month = g.Key.Month,
+                                ProductID = g.Key.ProductID,
+                                ProductName = g.Key.ProductName,
+                                TotalRevenue = totalRevenue,
+                                OrderDate = g.Select(x => x.i.OrderDate).FirstOrDefault()
+                            };
+
+                var allItemsByMonth = query
+                    .Select(x => new THONGKE_DTO
+                    {
+                        tenMon = x.ProductName,
+                        tongTien = (double)x.TotalRevenue,
+                        thoigian = x.OrderDate.ToString()
+                    })
+                    .ToList();
+
+                return allItemsByMonth;
+            }
+        }
+
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
 
 
         public List<THONGKE_DTO> getTop3ByMonth(int thang)

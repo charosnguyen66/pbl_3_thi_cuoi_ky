@@ -17,6 +17,32 @@ namespace BusinessLayer
             return db.tb_Customer.ToList();
 
         }
+        public List<object> GetCustomerInfoList()
+        {
+            List<tb_Customer> customerList = GetAccountsFromTable("tb_Customer");
+
+            List<object> selectedCustomerInfoList = new List<object>();
+
+            foreach (var customer in customerList)
+            {
+                string gender = customer.Gender == true ? "Nữ" : "Nam";
+                var customerInfo = new
+                {
+                    Mãkháchhàng = customer.CustomerID,
+                    Tênkháchhàng = customer.Name,
+                    Sốđiệnthoại = customer.PhoneNumber,
+                    Giớitính = gender,
+                    Ngàysinh = customer.Birthdate,
+                    Địachỉ = customer.Address,
+                    Điểmthưởng = customer.RewardPoints,
+                    Mậtkhẩu = customer.Password
+                };
+
+                selectedCustomerInfoList.Add(customerInfo);
+            }
+
+            return selectedCustomerInfoList;
+        }
         public tb_Customer getItem(string id) { return db.tb_Customer.FirstOrDefault(x => x.CustomerID == id); }
         public bool CheckLogin(string username, string password)
         {
@@ -88,17 +114,78 @@ namespace BusinessLayer
         }
         public void Delete(string id)
         {
-            try
+            using (var context = new PBL3Entities())
             {
-                var _dt = db.tb_Customer.FirstOrDefault(x => x.CustomerID == id);
-                db.tb_Customer.Remove(_dt);
-                db.SaveChanges();
+                using (var transaction = context.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        // Remove related ratings
+                        var ratings = context.tb_Rating.Where(r => r.customerID.Trim() == id.Trim()).ToList();
+                        if (ratings.Any())
+                        {
+                            context.tb_Rating.RemoveRange(ratings);
+                        }
 
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
+                        // Find invoices related to the customer
+                        var invoices = context.tb_Invoice.Where(i => i.CustomerID.Trim() == id.Trim()).ToList();
+                        foreach (var invoice in invoices)
+                        {
+                            // Remove related invoice details
+                            var invoiceDetails = context.tb_Invoice_Detail.Where(d => d.InvoiceID.Trim() == invoice.InvoiceID.Trim()).ToList();
+                            if (invoiceDetails.Any())
+                            {
+                                context.tb_Invoice_Detail.RemoveRange(invoiceDetails);
+                            }
+
+                            // Remove related payments
+                          
+
+                            // Remove the invoice itself
+                            context.tb_Invoice.Remove(invoice);
+                        }
+
+                        // Remove standalone payments related to the customer
+                      
+
+                        // Remove the customer record
+                        var customer = context.tb_Customer.SingleOrDefault(c => c.CustomerID.Trim() == id.Trim());
+                        if (customer != null)
+                        {
+                            context.tb_Customer.Remove(customer);
+                        }
+
+                        // Save changes and commit the transaction
+                        context.SaveChanges();
+                        transaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+
+                        string errorMessage = GetFullErrorMessage(ex);
+                        throw new Exception("Đã xảy ra lỗi trong quá trình xóa khách hàng: " + errorMessage);
+                    }
+                }
             }
         }
+
+        private string GetFullErrorMessage(Exception ex)
+        {
+            // A helper function to get the full error message
+            if (ex.InnerException == null)
+            {
+                return ex.Message;
+            }
+            return ex.Message + " --> " + GetFullErrorMessage(ex.InnerException);
+        }
+
+
+
+
+
+
+
+
     }
 }

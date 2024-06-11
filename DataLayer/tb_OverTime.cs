@@ -16,7 +16,7 @@ namespace DataLayer
     {
         public string ID { get; set; }
         public Nullable<System.DateTime> OvertimeDate { get; set; }
-        public Nullable<int> OvertimeHours { get; set; }
+        public Nullable<int> HoursOT { get; set; }
         public string EmployeeID { get; set; }
         public Nullable<double> coeffSalary { get; set; }
     

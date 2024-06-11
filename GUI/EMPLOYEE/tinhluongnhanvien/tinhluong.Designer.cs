@@ -32,6 +32,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtLuongCoBan = new System.Windows.Forms.TextBox();
+            this.txtSoGioTangCa = new System.Windows.Forms.TextBox();
+            this.txtSoNgayNghi = new System.Windows.Forms.TextBox();
+            this.txtTongLuong = new System.Windows.Forms.TextBox();
+=======
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -40,22 +48,37 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btnChonThoiGian = new FontAwesome.Sharp.IconButton();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+<<<<<<< HEAD
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtLuongTangCa = new System.Windows.Forms.TextBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+=======
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+<<<<<<< HEAD
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+=======
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             this.SuspendLayout();
             // 
             // dateTimePicker1
@@ -93,12 +116,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+<<<<<<< HEAD
+            this.label4.Location = new System.Drawing.Point(347, 214);
+=======
             this.label4.Location = new System.Drawing.Point(347, 200);
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 25);
             this.label4.TabIndex = 4;
             this.label4.Text = "Số giờ tăng ca";
             // 
+<<<<<<< HEAD
+=======
             // label5
             // 
             this.label5.AutoSize = true;
@@ -109,11 +138,16 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Phạt trễ giờ làm ";
             // 
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+<<<<<<< HEAD
+            this.label6.Location = new System.Drawing.Point(352, 335);
+=======
             this.label6.Location = new System.Drawing.Point(352, 329);
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(125, 25);
             this.label6.TabIndex = 6;
@@ -129,6 +163,43 @@
             this.label7.TabIndex = 7;
             this.label7.Text = "Tổng lương";
             // 
+<<<<<<< HEAD
+            // txtLuongCoBan
+            // 
+            this.txtLuongCoBan.BackColor = System.Drawing.Color.Bisque;
+            this.txtLuongCoBan.Location = new System.Drawing.Point(600, 133);
+            this.txtLuongCoBan.Multiline = true;
+            this.txtLuongCoBan.Name = "txtLuongCoBan";
+            this.txtLuongCoBan.Size = new System.Drawing.Size(160, 34);
+            this.txtLuongCoBan.TabIndex = 9;
+            // 
+            // txtSoGioTangCa
+            // 
+            this.txtSoGioTangCa.BackColor = System.Drawing.Color.Bisque;
+            this.txtSoGioTangCa.Location = new System.Drawing.Point(600, 205);
+            this.txtSoGioTangCa.Multiline = true;
+            this.txtSoGioTangCa.Name = "txtSoGioTangCa";
+            this.txtSoGioTangCa.Size = new System.Drawing.Size(160, 34);
+            this.txtSoGioTangCa.TabIndex = 11;
+            // 
+            // txtSoNgayNghi
+            // 
+            this.txtSoNgayNghi.BackColor = System.Drawing.Color.Bisque;
+            this.txtSoNgayNghi.Location = new System.Drawing.Point(600, 339);
+            this.txtSoNgayNghi.Multiline = true;
+            this.txtSoNgayNghi.Name = "txtSoNgayNghi";
+            this.txtSoNgayNghi.Size = new System.Drawing.Size(160, 34);
+            this.txtSoNgayNghi.TabIndex = 15;
+            // 
+            // txtTongLuong
+            // 
+            this.txtTongLuong.BackColor = System.Drawing.Color.Bisque;
+            this.txtTongLuong.Location = new System.Drawing.Point(600, 404);
+            this.txtTongLuong.Multiline = true;
+            this.txtTongLuong.Name = "txtTongLuong";
+            this.txtTongLuong.Size = new System.Drawing.Size(160, 34);
+            this.txtTongLuong.TabIndex = 17;
+=======
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.Color.Bisque;
@@ -173,12 +244,17 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(160, 34);
             this.textBox5.TabIndex = 17;
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+<<<<<<< HEAD
+            this.label8.Location = new System.Drawing.Point(859, 413);
+=======
             this.label8.Location = new System.Drawing.Point(851, 413);
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(51, 25);
             this.label8.TabIndex = 18;
@@ -231,13 +307,23 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::GUI.Properties.Resources._1;
+<<<<<<< HEAD
+            this.pictureBox4.Location = new System.Drawing.Point(547, 331);
+=======
             this.pictureBox4.Location = new System.Drawing.Point(547, 325);
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(271, 51);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 14;
             this.pictureBox4.TabStop = false;
             // 
+<<<<<<< HEAD
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::GUI.Properties.Resources._1;
+            this.pictureBox2.Location = new System.Drawing.Point(547, 197);
+=======
             // pictureBox3
             // 
             this.pictureBox3.Image = global::GUI.Properties.Resources._1;
@@ -252,6 +338,7 @@
             // 
             this.pictureBox2.Image = global::GUI.Properties.Resources._1;
             this.pictureBox2.Location = new System.Drawing.Point(547, 183);
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(271, 51);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -268,15 +355,65 @@
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
+<<<<<<< HEAD
+            // txtLuongTangCa
+            // 
+            this.txtLuongTangCa.BackColor = System.Drawing.Color.Bisque;
+            this.txtLuongTangCa.Location = new System.Drawing.Point(600, 273);
+            this.txtLuongTangCa.Multiline = true;
+            this.txtLuongTangCa.Name = "txtLuongTangCa";
+            this.txtLuongTangCa.Size = new System.Drawing.Size(160, 34);
+            this.txtLuongTangCa.TabIndex = 24;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::GUI.Properties.Resources._1;
+            this.pictureBox3.Location = new System.Drawing.Point(547, 265);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(271, 51);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 23;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.8F, System.Drawing.FontStyle.Bold);
+            this.label1.Location = new System.Drawing.Point(321, 282);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(199, 25);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Lương mỗi giờ tăng ca";
+            // 
+=======
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             // tinhluong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1099, 450);
+<<<<<<< HEAD
+            this.Controls.Add(this.txtLuongTangCa);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.label1);
+=======
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.btnChonThoiGian);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.label8);
+<<<<<<< HEAD
+            this.Controls.Add(this.txtTongLuong);
+            this.Controls.Add(this.pictureBox5);
+            this.Controls.Add(this.txtSoNgayNghi);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.txtSoGioTangCa);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.txtLuongCoBan);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+=======
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.textBox4);
@@ -290,6 +427,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -301,9 +439,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+<<<<<<< HEAD
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+=======
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -314,6 +458,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+<<<<<<< HEAD
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtLuongCoBan;
+        private System.Windows.Forms.TextBox txtSoGioTangCa;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.TextBox txtSoNgayNghi;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.TextBox txtTongLuong;
+=======
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -326,10 +481,17 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.TextBox textBox5;
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox6;
         private FontAwesome.Sharp.IconButton btnChonThoiGian;
         private System.Windows.Forms.PictureBox pictureBox7;
+<<<<<<< HEAD
+        private System.Windows.Forms.TextBox txtLuongTangCa;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Label label1;
+=======
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
     }
 }

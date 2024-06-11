@@ -19,6 +19,7 @@ namespace DataLayer
         {
             this.tb_OverTime = new HashSet<tb_OverTime>();
             this.tb_SickOff = new HashSet<tb_SickOff>();
+            this.tb_Wage = new HashSet<tb_Wage>();
         }
     
         public string EmployeeID { get; set; }
@@ -35,6 +36,7 @@ namespace DataLayer
         public virtual ICollection<tb_OverTime> tb_OverTime { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_SickOff> tb_SickOff { get; set; }
-        public virtual tb_Wage tb_Wage { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<tb_Wage> tb_Wage { get; set; }
     }
 }

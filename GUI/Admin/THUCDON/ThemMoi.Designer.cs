@@ -2,15 +2,8 @@
 {
     partial class ThemMoi
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             this.label2 = new System.Windows.Forms.Label();
@@ -40,6 +29,9 @@
             this.btnInsert = new System.Windows.Forms.Button();
             this.pbMinhHoa = new System.Windows.Forms.PictureBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.btnAddIngredient = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panelIngredients = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pbMinhHoa)).BeginInit();
             this.SuspendLayout();
             // 
@@ -121,11 +113,11 @@
             // 
             this.cbbTheLoai.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(184)))), ((int)(((byte)(184)))));
             this.cbbTheLoai.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbbTheLoai.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbbTheLoai.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbbTheLoai.FormattingEnabled = true;
             this.cbbTheLoai.Location = new System.Drawing.Point(733, 52);
             this.cbbTheLoai.Name = "cbbTheLoai";
-            this.cbbTheLoai.Size = new System.Drawing.Size(187, 28);
+            this.cbbTheLoai.Size = new System.Drawing.Size(187, 31);
             this.cbbTheLoai.TabIndex = 9;
             this.cbbTheLoai.SelectedIndexChanged += new System.EventHandler(this.cbbTheLoai_SelectedIndexChanged);
             // 
@@ -154,20 +146,53 @@
             // 
             this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(176)))), ((int)(((byte)(157)))));
             this.btnAdd.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(828, 345);
+            this.btnAdd.Location = new System.Drawing.Point(790, 349);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(117, 36);
+            this.btnAdd.Size = new System.Drawing.Size(130, 45);
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "Thêm mới";
             this.btnAdd.UseVisualStyleBackColor = false;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnAddIngredient
+            // 
+            this.btnAddIngredient.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnAddIngredient.Font = new System.Drawing.Font("Microsoft YaHei UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddIngredient.Location = new System.Drawing.Point(206, 375);
+            this.btnAddIngredient.Name = "btnAddIngredient";
+            this.btnAddIngredient.Size = new System.Drawing.Size(46, 29);
+            this.btnAddIngredient.TabIndex = 15;
+            this.btnAddIngredient.Text = "+";
+            this.btnAddIngredient.UseVisualStyleBackColor = false;
+            this.btnAddIngredient.Click += new System.EventHandler(this.btnAddIngredient_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 9F);
+            this.label1.Location = new System.Drawing.Point(92, 377);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Nguyên liệu";
+            // 
+            // panelIngredients
+            // 
+            this.panelIngredients.AutoSize = true;
+            this.panelIngredients.Location = new System.Drawing.Point(95, 410);
+            this.panelIngredients.Name = "panelIngredients";
+            this.panelIngredients.Size = new System.Drawing.Size(400, 100);
+            this.panelIngredients.TabIndex = 16;
             // 
             // ThemMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.ClientSize = new System.Drawing.Size(1049, 393);
+            this.ClientSize = new System.Drawing.Size(963, 572);
+            this.Controls.Add(this.panelIngredients);
+            this.Controls.Add(this.btnAddIngredient);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.pbMinhHoa);
             this.Controls.Add(this.btnInsert);
@@ -180,8 +205,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ThemMoi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ThemMoi";
             this.Load += new System.EventHandler(this.ThemMoi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbMinhHoa)).EndInit();
@@ -203,5 +229,8 @@
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.PictureBox pbMinhHoa;
         private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnAddIngredient; // Nút thêm nguyên liệu
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panelIngredients;
     }
 }

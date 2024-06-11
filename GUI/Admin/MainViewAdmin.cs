@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -42,10 +43,10 @@ namespace GUI
 
         private void menuTransition_Tick(object sender, EventArgs e)
         {
-            if(menuExpand == false)
+            if (menuExpand == false)
             {
-                    menuContainer.Height += 10;
-                if(menuContainer.Height >= 168)
+                menuContainer.Height += 10;
+                if (menuContainer.Height >= 168)
                 {
                     menuTransition.Stop();
                     menuExpand = true;
@@ -54,7 +55,7 @@ namespace GUI
             else
             {
                 menuContainer.Height -= 10;
-                if(menuContainer.Height <= 56)
+                if (menuContainer.Height <= 56)
                 {
                     menuTransition.Stop();
                     menuExpand = false;
@@ -67,8 +68,6 @@ namespace GUI
             menuTransition.Start();
         }
 
-     
-
         private void label2_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -76,9 +75,10 @@ namespace GUI
         bool sidebarExpand = true;
         private void sidebarTransition_Tick(object sender, EventArgs e)
         {
-            if(sidebarExpand) {
+            if (sidebarExpand)
+            {
                 sidebar.Width -= 10;
-                if(sidebar.Width <= 51)
+                if (sidebar.Width <= 51)
                 {
                     sidebarExpand = false;
                     sidebarTransition.Stop();
@@ -89,26 +89,22 @@ namespace GUI
                     pnThucDon.Width = sidebar.Width;
                     menuContainer.Width = sidebar.Width;
                 }
-                
-
             }
             else
             {
                 sidebar.Width += 10;
-                if(sidebar.Width >= 190)
+                if (sidebar.Width >= 244)
                 {
                     sidebarExpand = true;
                     sidebarTransition.Stop();
 
                     pnDangXuat.Width = sidebar.Width;
-                    pnNguyenLieu.Width = sidebar.Width; 
+                    pnNguyenLieu.Width = sidebar.Width;
                     pnThongKe.Width = sidebar.Width;
                     pnThucDon.Width = sidebar.Width;
                     menuContainer.Width = sidebar.Width;
-
                 }
             }
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -117,7 +113,7 @@ namespace GUI
         }
 
         private void flowLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {        }
+        { }
 
         private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -126,17 +122,7 @@ namespace GUI
 
         private void btnThucDon_Click(object sender, EventArgs e)
         {
-            if(menu == null)
-            {
-                menu = new ManageMenu();
-                menu.FormClosed += Menu_FormClosed;
-                menu.MdiParent = this;
-                menu.Show();
-            }
-            else
-            {
-                menu.Activate();
-            }
+           
         }
 
         private void Menu_FormClosed(object sender, FormClosedEventArgs e)
@@ -146,13 +132,13 @@ namespace GUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if(employee == null)
+            if (employee == null)
             {
                 employee = new ManageEmployee();
                 employee.FormClosed += Employee_FormClosed;
                 employee.MdiParent = this;
-                employee.Dock = DockStyle.Fill;
-                employee.Show();    
+                employee.Dock = DockStyle.Fill; // Đảm bảo form con chiếm toàn bộ diện tích MDI parent
+                employee.Show();
             }
             else
             {
@@ -173,7 +159,7 @@ namespace GUI
                 customer = new ManageCustomer();
                 customer.FormClosed += Customer_FormClosed;
                 customer.MdiParent = this;
-                customer.Dock = DockStyle.Fill;
+                customer.Dock = DockStyle.Fill; // Đảm bảo form con chiếm toàn bộ diện tích MDI parent
                 customer.Show();
             }
             else
@@ -194,44 +180,42 @@ namespace GUI
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
+            Debug.WriteLine("Before showing statistic form: Parent Size = " + this.Size.ToString());
+
             if (statistic == null)
             {
                 statistic = new ManageStatistic();
                 statistic.FormClosed += Statistic_FormClosed;
                 statistic.MdiParent = this;
+                statistic.Dock = DockStyle.Fill; // Đảm bảo form con chiếm toàn bộ diện tích MDI parent
                 statistic.Show();
             }
             else
             {
                 statistic.Activate();
             }
+
+            Debug.WriteLine("After showing statistic form: Parent Size = " + this.Size.ToString());
         }
 
         private void Statistic_FormClosed(object sender, FormClosedEventArgs e)
         {
             statistic = null;
         }
+
         private void btnNguyenLieu_Click(object sender, EventArgs e)
         {
-            if (ingredient == null)
-            {
-                ingredient = new ManageIngredient();
-                ingredient.FormClosed += Ingredient_FormClosed;
-                ingredient.MdiParent = this;
-                ingredient.Show();
-            }
-            else
-            {
-                ingredient.Activate();
-            }
+           
         }
 
+
+
+        ///hgggggggggggggggggg
         private void Ingredient_FormClosed(object sender, FormClosedEventArgs e)
         {
             ingredient = null;
         }
 
-      
         private Color originalColor;
 
         private void MainViewAdmin_Load(object sender, EventArgs e)
@@ -247,7 +231,7 @@ namespace GUI
             {
                 btn.BackColor = Color.Red; // Thay đổi màu nền của button trở lại thành màu đỏ khi di chuột rời khỏi
             }
-            
+
         }
 
         private void MainViewAdmin_LostFocus(object sender, EventArgs e)
@@ -267,6 +251,85 @@ namespace GUI
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnThongKe_Click_1(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btnTaiKhoan_Click(object sender, EventArgs e)
+        {
+            menuTransition.Start();
+        }
+
+        private void btnThongKe_Click_2(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Before showing statistic form: Parent Size = " + this.Size.ToString());
+
+            if (statistic == null)
+            {
+                statistic = new ManageStatistic();
+                statistic.FormClosed += Statistic_FormClosed;
+                statistic.MdiParent = this;
+                statistic.Dock = DockStyle.Fill; // Đảm bảo form con chiếm toàn bộ diện tích MDI parent
+                statistic.Show();
+            }
+            else
+            {
+                statistic.Activate();
+            }
+
+            Debug.WriteLine("After showing statistic form: Parent Size = " + this.Size.ToString());
+        }
+
+        private void btnDangXuat_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất không?", "Xác nhận đăng xuất", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                Login uu = new Login();
+                uu.Show();
+            }
+        }
+
+        private void btnThucDon_Click_1(object sender, EventArgs e)
+        {
+            if (menu == null)
+            {
+                menu = new ManageMenu();
+                menu.FormClosed += Menu_FormClosed;
+                menu.MdiParent = this;
+                menu.Dock = DockStyle.Fill; // Đảm bảo form con chiếm toàn bộ diện tích MDI parent
+                menu.Show();
+            }
+            else
+            {
+                menu.Activate();
+            }
+        }
+
+        private void btnNguyenLieu_Click_1(object sender, EventArgs e)
+        {
+            if (ingredient == null)
+            {
+                ingredient = new ManageIngredient();
+                ingredient.FormClosed += Ingredient_FormClosed;
+                ingredient.MdiParent = this;
+                ingredient.Dock = DockStyle.Fill; // Đảm bảo form con chiếm toàn bộ diện tích MDI parent
+                ingredient.Show();
+            }
+            else
+            {
+                ingredient.Activate();
+            }
         }
     }
 }

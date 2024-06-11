@@ -57,6 +57,19 @@
           <Property Name="image" Type="image" />
           <Property Name="Address" Type="nvarchar" MaxLength="50" />
         </EntityType>
+<<<<<<< HEAD
+        <EntityType Name="tb_Ingredient">
+          <Key>
+            <PropertyRef Name="IngredientID" />
+          </Key>
+          <Property Name="IngredientID" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="IngredientName" Type="nvarchar" MaxLength="40" />
+          <Property Name="Number" Type="int" />
+          <Property Name="ProductID" Type="nchar" MaxLength="10" />
+          <Property Name="Price" Type="float" />
+        </EntityType>
+=======
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
         <EntityType Name="tb_Invoice">
           <Key>
             <PropertyRef Name="InvoiceID" />
@@ -96,7 +109,7 @@
           </Key>
           <Property Name="ID" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="OvertimeDate" Type="date" />
-          <Property Name="OvertimeHours" Type="int" />
+          <Property Name="HoursOT" Type="int" />
           <Property Name="EmployeeID" Type="nchar" MaxLength="10" />
           <Property Name="coeffSalary" Type="float" />
         </EntityType>
@@ -142,13 +155,12 @@
         </EntityType>
         <EntityType Name="tb_Wage">
           <Key>
-            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="WageID" />
           </Key>
+          <Property Name="WageID" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="EmployeeID" Type="nchar" MaxLength="10" Nullable="false" />
-          <Property Name="TimeStart" Type="date" />
-          <Property Name="TimeEnd" Type="date" />
-          <Property Name="WorkingTime" Type="int" />
-          <Property Name="Wage" Type="nchar" MaxLength="10" />
+          <Property Name="MonthWage" Type="datetime" />
+          <Property Name="Wage" Type="float" />
         </EntityType>
         <Association Name="FK_Invoice_Customer">
           <End Role="tb_Customer" Type="Self.tb_Customer" Multiplicity="0..1" />
@@ -296,7 +308,7 @@
         </Association>
         <Association Name="FK_tb_Wage_tb_Employee">
           <End Role="tb_Employee" Type="Self.tb_Employee" Multiplicity="1" />
-          <End Role="tb_Wage" Type="Self.tb_Wage" Multiplicity="0..1" />
+          <End Role="tb_Wage" Type="Self.tb_Wage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_Employee">
               <PropertyRef Name="EmployeeID" />
@@ -439,6 +451,20 @@
           <NavigationProperty Name="tb_SickOff" Relationship="Self.FK_tb_SickOff_tb_Employee" FromRole="tb_Employee" ToRole="tb_SickOff" />
           <NavigationProperty Name="tb_Wage" Relationship="Self.FK_tb_Wage_tb_Employee" FromRole="tb_Employee" ToRole="tb_Wage" />
         </EntityType>
+<<<<<<< HEAD
+        <EntityType Name="tb_Ingredient">
+          <Key>
+            <PropertyRef Name="IngredientID" />
+          </Key>
+          <Property Name="IngredientID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="IngredientName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Number" Type="Int32" />
+          <Property Name="ProductID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Price" Type="Double" />
+          <NavigationProperty Name="tb_Product" Relationship="Self.FK_tb_Ingredient_tb_Product" FromRole="tb_Ingredient" ToRole="tb_Product" />
+        </EntityType>
+=======
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
         <EntityType Name="tb_Invoice">
           <Key>
             <PropertyRef Name="InvoiceID" />
@@ -485,7 +511,7 @@
           </Key>
           <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="OvertimeDate" Type="DateTime" Precision="0" />
-          <Property Name="OvertimeHours" Type="Int32" />
+          <Property Name="HoursOT" Type="Int32" />
           <Property Name="EmployeeID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Name="coeffSalary" Type="Double" />
           <NavigationProperty Name="tb_Employee" Relationship="Self.FK_tb_OverTime_tb_Employee" FromRole="tb_OverTime" ToRole="tb_Employee" />
@@ -541,13 +567,12 @@
         </EntityType>
         <EntityType Name="tb_Wage">
           <Key>
-            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="WageID" />
           </Key>
+          <Property Name="WageID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="EmployeeID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-          <Property Name="TimeStart" Type="DateTime" Precision="0" />
-          <Property Name="TimeEnd" Type="DateTime" Precision="0" />
-          <Property Name="WorkingTime" Type="Int32" />
-          <Property Name="Wage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MonthWage" Type="DateTime" Precision="3" />
+          <Property Name="Wage" Type="Double" />
           <NavigationProperty Name="tb_Employee" Relationship="Self.FK_tb_Wage_tb_Employee" FromRole="tb_Wage" ToRole="tb_Employee" />
         </EntityType>
         <Association Name="FK_Product_Category">
@@ -636,7 +661,7 @@
         </Association>
         <Association Name="FK_tb_Wage_tb_Employee">
           <End Role="tb_Employee" Type="Self.tb_Employee" Multiplicity="1" />
-          <End Role="tb_Wage" Type="Self.tb_Wage" Multiplicity="0..1" />
+          <End Role="tb_Wage" Type="Self.tb_Wage" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="tb_Employee">
               <PropertyRef Name="EmployeeID" />
@@ -837,6 +862,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+<<<<<<< HEAD
+          <EntitySetMapping Name="tb_Ingredient">
+            <EntityTypeMapping TypeName="PBL3Model.tb_Ingredient">
+              <MappingFragment StoreEntitySet="tb_Ingredient">
+                <ScalarProperty Name="IngredientID" ColumnName="IngredientID" />
+                <ScalarProperty Name="IngredientName" ColumnName="IngredientName" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+=======
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
           <EntitySetMapping Name="tb_Invoice">
             <EntityTypeMapping TypeName="PBL3Model.tb_Invoice">
               <MappingFragment StoreEntitySet="tb_Invoice">
@@ -878,7 +917,7 @@
               <MappingFragment StoreEntitySet="tb_OverTime">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="OvertimeDate" ColumnName="OvertimeDate" />
-                <ScalarProperty Name="OvertimeHours" ColumnName="OvertimeHours" />
+                <ScalarProperty Name="HoursOT" ColumnName="HoursOT" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="coeffSalary" ColumnName="coeffSalary" />
               </MappingFragment>
@@ -931,10 +970,9 @@
           <EntitySetMapping Name="tb_Wage">
             <EntityTypeMapping TypeName="PBL3Model.tb_Wage">
               <MappingFragment StoreEntitySet="tb_Wage">
+                <ScalarProperty Name="WageID" ColumnName="WageID" />
                 <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
-                <ScalarProperty Name="TimeStart" ColumnName="TimeStart" />
-                <ScalarProperty Name="TimeEnd" ColumnName="TimeEnd" />
-                <ScalarProperty Name="WorkingTime" ColumnName="WorkingTime" />
+                <ScalarProperty Name="MonthWage" ColumnName="MonthWage" />
                 <ScalarProperty Name="Wage" ColumnName="Wage" />
               </MappingFragment>
             </EntityTypeMapping>

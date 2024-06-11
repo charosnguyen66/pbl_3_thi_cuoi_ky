@@ -15,6 +15,8 @@ namespace DataLayer
     
     public partial class PBL3Entities : DbContext
     {
+        public object tb_Invoice_Details;
+
         public PBL3Entities()
             : base("name=PBL3Entities")
         {

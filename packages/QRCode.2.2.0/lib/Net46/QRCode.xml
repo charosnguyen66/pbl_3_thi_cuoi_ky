@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QRCode</name>
+    </assembly>
+    <members>
+        <member name="T:QRCode.Service">
+            <summary>
+            Static class to generate QR code string
+            </summary>
+        </member>
+        <member name="M:QRCode.Service.GenerateStaticCode(System.String,System.String,System.String,System.String,System.Nullable{System.Decimal})">
+            <summary>
+            Use to create Static QR Code string
+            </summary>
+            <param name="id">merchant id MAX characters 28</param>
+            <param name="name">merchant name MAX characters 25</param>
+            <param name="city">city name MAX characters 15</param>
+            <param name="postalCode">postal code Exact length 5</param>
+            <param name="amount">transaction amount MAX characters 13</param>
+            <returns>QR code string base on MobilityOne standard</returns>
+        </member>
+        <member name="M:QRCode.Service.GenerateDynamicCode(System.String,System.String,System.String,System.String,System.Decimal)">
+            <summary>
+            Use to create Dynamic QR Code string
+            </summary>
+            <param name="id">merchant id MAX characters 28</param>
+            <param name="name">merchant name MAX characters 25</param>
+            <param name="city">city name MAX characters 15</param>
+            <param name="postalCode">postal code Exact length 5</param>
+            <param name="amount">transaction amount MAX characters 13</param>
+            <returns>QR code string base on MobilityOne standard</returns>
+        </member>
+    </members>
+</doc>

@@ -3,6 +3,7 @@ using DataLayer;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Validation;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
@@ -37,6 +38,44 @@ namespace BusinessLayer
 
             return false;
         }
+        public void SaveChangesWithValidation()
+        {
+            try
+            {
+                using (var context = new PBL3Entities())
+                {
+                    context.SaveChanges();
+                }
+            }
+            catch (DbEntityValidationException ex)
+            {
+                StringBuilder sb = new StringBuilder();
+
+                foreach (var validationErrors in ex.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        sb.AppendLine($"Property: {validationError.PropertyName} Error: {validationError.ErrorMessage}");
+                    }
+                }
+
+                throw new Exception(sb.ToString(), ex);
+            }
+            catch (DbUpdateException ex)
+            {
+                StringBuilder sb = new StringBuilder();
+
+                Exception innerException = ex.InnerException;
+                while (innerException != null)
+                {
+                    sb.AppendLine(innerException.Message);
+                    innerException = innerException.InnerException;
+                }
+
+                throw new Exception("An error occurred while updating the entries. See the inner exception for details: " + sb.ToString(), ex);
+            }
+        }
+
         public tb_Invoice AddNew(tb_Invoice customer)
         {
             try
@@ -156,6 +195,39 @@ namespace BusinessLayer
             return result;
         }
 
+<<<<<<< HEAD
+        public decimal CalculateTotalPrice(string invoiceID)
+        {
+            decimal totalPrice = 0;
+
+            // Get the list of invoices that match the given invoiceID
+            var invoices = db.tb_Invoice.Where(inv => inv.InvoiceID.Trim() == invoiceID).ToList();
+
+            // Loop through each invoice
+            foreach (var invoice in invoices)
+            {
+                // Get the list of invoice details that match the current invoiceID
+                var invoiceDetails = db.tb_Invoice_Detail.Where(detail => detail.InvoiceID.Trim() == invoice.InvoiceID.Trim()).ToList();
+
+                // Loop through each invoice detail to calculate the total price
+                foreach (var detail in invoiceDetails)
+                {
+                    // Get product information from the invoice detail
+                    var product = db.tb_Product.SingleOrDefault(p => p.ProductID.Trim() == detail.ProductID.Trim());
+
+                    if (product != null)
+                    {
+                        decimal quantity = detail.Quanlity ?? 0;
+                        decimal price = (decimal)(product.Price ?? 0);
+                        totalPrice += quantity * price;
+                    }
+                }
+            }
+
+            return totalPrice;
+        }
+=======
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
 
 
         public string GetPaymentNameById(string paymentId)

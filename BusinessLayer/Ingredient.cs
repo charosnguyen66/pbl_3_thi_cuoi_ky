@@ -33,7 +33,11 @@ namespace BusinessLayer
                         Name = ingredient.IngredientName,
                         Number = (int)ingredient.Number,
                         ProductName = product.ProductName,
+<<<<<<< HEAD
+                        Price = (float)ingredient.Price
+=======
                         Note = ingredient.Note
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
                     })
                 .ToList();
 
@@ -59,21 +63,54 @@ namespace BusinessLayer
             try
             {
                 var _dt = db.tb_Ingredient.FirstOrDefault(x => x.IngredientID == customer.IngredientID);
-                //_dt.InvoiceID = customer.InvoiceID;
-                _dt.IngredientName = customer.IngredientName;
-                _dt.Number = customer.Number;
-                _dt.ProductID = customer.ProductID;
-                _dt.Note = customer.Note;
-               
+
+                if (_dt == null)
+                {
+                    throw new Exception("Ingredient not found");
+                }
+
+                // Add debugging information
+                Console.WriteLine($"Updating IngredientID: {customer.IngredientID}");
+
+                // _dt.InvoiceID = customer.InvoiceID; // Uncomment if needed
+
+                if (customer.IngredientName != null)
+                {
+                    Console.WriteLine($"Updating IngredientName: {customer.IngredientName}");
+                    _dt.IngredientName = customer.IngredientName;
+                }
+
+                if (customer.Number != null)
+                {
+                    Console.WriteLine($"Updating Number: {customer.Number.Value}");
+                    _dt.Number = customer.Number.Value; // Assuming Number is nullable
+                }
+
+                if (customer.ProductID != null)
+                {
+                    Console.WriteLine($"Updating ProductID: {customer.ProductID}");
+                    _dt.ProductID = customer.ProductID;
+                }
+
+                if (customer.Price != null)
+                {
+                    Console.WriteLine($"Updating Price: {customer.Price.Value}");
+                    _dt.Price = (double)customer.Price.Value; // Assuming Price is nullable
+                }
+
                 db.SaveChanges();
 
                 return customer;
             }
             catch (Exception ex)
             {
+                // Log the exception message
+                Console.WriteLine("Error: " + ex.Message);
                 throw new Exception(ex.Message);
             }
         }
+
+
         public bool setIngrdient(string id, int soLuong)
         {
             List<tb_Ingredient> list = GetAccountsFromTable("tb_Ingredient");

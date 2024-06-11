@@ -109,5 +109,12 @@ namespace GUI
 
             }
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Hide();
+            RegistrationForm r = new RegistrationForm();
+            r.Show();
+        }
     }
 }

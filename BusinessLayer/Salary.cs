@@ -13,13 +13,13 @@ namespace BusinessLayer
     {
 
         private PBL3Entities db = new PBL3Entities();
-       
+
         public List<tb_Wage> GetAccountsFromTable(string tab)
         {
             return db.tb_Wage.ToList();
         }
 
-      
+
 
         //public List<NhanVien_DTO> getListEmployee(string tableName)
         //{
@@ -63,7 +63,19 @@ namespace BusinessLayer
         //    return listNVDTO;
 
         //}
-        public tb_Wage getItem(string id) { return db.tb_Wage.FirstOrDefault(x => x.EmployeeID == id); }
+        public tb_Wage getItem(string id, int month, int year)
+        {
+            return db.tb_Wage.FirstOrDefault(x => x.EmployeeID == id
+                                                  && x.MonthWage.Value.Year == year
+                                                  && x.MonthWage.Value.Month == month
+                                                  );
+        }
+
+        //public tb_Wage getItem(string id)
+        //{
+        //    return db.tb_Wage.FirstOrDefault(x => x.EmployeeID == id);
+        //}
+
 
         public bool checkExist(string username)
         {
@@ -106,11 +118,10 @@ namespace BusinessLayer
             try
             {
                 var _dt = db.tb_Wage.FirstOrDefault(x => x.EmployeeID == customer.EmployeeID);
-                _dt.TimeStart = customer.TimeStart;
-                _dt.TimeEnd = customer.TimeEnd;
-                _dt.WorkingTime = customer.WorkingTime;
+
+                _dt.MonthWage = customer.MonthWage;
                 _dt.Wage = customer.Wage;
-              
+
                 db.SaveChanges();
 
                 return customer;

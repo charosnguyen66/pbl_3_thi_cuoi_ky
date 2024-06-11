@@ -60,6 +60,20 @@
     <NavigationProperty Name="tb_SickOff" Relationship="Self.FK_tb_SickOff_tb_Employee" FromRole="tb_Employee" ToRole="tb_SickOff" />
     <NavigationProperty Name="tb_Wage" Relationship="Self.FK_tb_Wage_tb_Employee" FromRole="tb_Employee" ToRole="tb_Wage" />
   </EntityType>
+<<<<<<< HEAD
+  <EntityType Name="tb_Ingredient">
+    <Key>
+      <PropertyRef Name="IngredientID" />
+    </Key>
+    <Property Name="IngredientID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="IngredientName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Number" Type="Int32" />
+    <Property Name="ProductID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Price" Type="Double" />
+    <NavigationProperty Name="tb_Product" Relationship="Self.FK_tb_Ingredient_tb_Product" FromRole="tb_Ingredient" ToRole="tb_Product" />
+  </EntityType>
+=======
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
   <EntityType Name="tb_Invoice">
     <Key>
       <PropertyRef Name="InvoiceID" />
@@ -106,7 +120,7 @@
     </Key>
     <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="OvertimeDate" Type="DateTime" Precision="0" />
-    <Property Name="OvertimeHours" Type="Int32" />
+    <Property Name="HoursOT" Type="Int32" />
     <Property Name="EmployeeID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Name="coeffSalary" Type="Double" />
     <NavigationProperty Name="tb_Employee" Relationship="Self.FK_tb_OverTime_tb_Employee" FromRole="tb_OverTime" ToRole="tb_Employee" />
@@ -162,13 +176,12 @@
   </EntityType>
   <EntityType Name="tb_Wage">
     <Key>
-      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="WageID" />
     </Key>
+    <Property Name="WageID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
     <Property Name="EmployeeID" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
-    <Property Name="TimeStart" Type="DateTime" Precision="0" />
-    <Property Name="TimeEnd" Type="DateTime" Precision="0" />
-    <Property Name="WorkingTime" Type="Int32" />
-    <Property Name="Wage" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MonthWage" Type="DateTime" Precision="3" />
+    <Property Name="Wage" Type="Double" />
     <NavigationProperty Name="tb_Employee" Relationship="Self.FK_tb_Wage_tb_Employee" FromRole="tb_Wage" ToRole="tb_Employee" />
   </EntityType>
   <Association Name="FK_Product_Category">
@@ -257,7 +270,7 @@
   </Association>
   <Association Name="FK_tb_Wage_tb_Employee">
     <End Role="tb_Employee" Type="Self.tb_Employee" Multiplicity="1" />
-    <End Role="tb_Wage" Type="Self.tb_Wage" Multiplicity="0..1" />
+    <End Role="tb_Wage" Type="Self.tb_Wage" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tb_Employee">
         <PropertyRef Name="EmployeeID" />

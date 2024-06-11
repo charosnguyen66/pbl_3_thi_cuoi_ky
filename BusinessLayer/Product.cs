@@ -1,4 +1,5 @@
-﻿using DataLayer;
+﻿using BusinessLayer.DTO;
+using DataLayer;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -18,6 +19,14 @@ namespace BusinessLayer
 
             return db.tb_Product.ToList();
 
+        }
+        public void AddIngredient(tb_Ingredient ingredient)
+        {
+            using (var context = new PBL3Entities())
+            {
+                context.tb_Ingredient.Add(ingredient);
+                context.SaveChanges();
+            }
         }
         public List<tb_Product> GetProductsByCategory1(string tableName, string categoryID)
         {
@@ -58,7 +67,59 @@ namespace BusinessLayer
             }
 
         }
-        public tb_Product Update(tb_Product product)
+        public List<tb_Product> GetAvailableProducts()
+        {
+            using (var context = new PBL3Entities()) // Replace with your actual DbContext
+            {
+                var availableProductsDTO = (from product in context.tb_Product
+                                            join ingredient in context.tb_Ingredient on product.ProductID equals ingredient.ProductID
+                                            where ingredient.Number > 0
+                                            select new ProductDTO
+                                            {
+                                                ProductID = product.ProductID,
+                                                ProductName = product.ProductName,
+                                                Price = (double)product.Price,
+                                                AddedDate = product.AddedDate,
+                                                DeleteDate = product.DeleteDate,
+                                                Description = product.Description,
+                                                CategoryID = product.CategoryID
+                                            }).Distinct().ToList();
+
+                var availableProducts = (from dto in availableProductsDTO
+                                         join product in context.tb_Product on dto.ProductID equals product.ProductID
+                                         select product).ToList();
+
+                return availableProducts;
+            }
+        }
+
+        public List<tb_Product> GetAvailableProductsByCategory(string categoryId)
+        {
+            using (var context = new PBL3Entities()) // Replace with your actual DbContext
+            {
+                var availableProductsDTO = (from product in context.tb_Product
+                                            join ingredient in context.tb_Ingredient on product.ProductID equals ingredient.ProductID
+                                            where ingredient.Number > 0 && product.CategoryID == categoryId
+                                            select new ProductDTO
+                                            {
+                                                ProductID = product.ProductID,
+                                                ProductName = product.ProductName,
+                                                Price = (double)product.Price,
+                                                AddedDate = product.AddedDate,
+                                                DeleteDate = product.DeleteDate,
+                                                Description = product.Description,
+                                                CategoryID = product.CategoryID
+                                            }).Distinct().ToList();
+
+                var availableProducts = (from dto in availableProductsDTO
+                                         join product in context.tb_Product on dto.ProductID equals product.ProductID
+                                         select product).ToList();
+
+                return availableProducts;
+            
+        }
+    }
+    public tb_Product Update(tb_Product product)
         {
             try
             {

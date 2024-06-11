@@ -22,6 +22,10 @@ namespace GUI.Admin.ThongKe
             setcbb();
             LoadToView();
         }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
         public void setcbb()
         {
             cbb1.Items.Add("Theo món ăn");
@@ -33,9 +37,16 @@ namespace GUI.Admin.ThongKe
                 cbbThang.Items.Add(i);
             }
         }
+<<<<<<< HEAD
+
+        public void LoadToView()
+        {
+            // Implement load logic if needed
+=======
         public void LoadToView()
         {
             
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
         }
 
         private void DisplayTopThreeItems(int targetMonth)
@@ -49,7 +60,10 @@ namespace GUI.Admin.ThongKe
             foreach (var item in top3Items)
             {
                 // Chuyển đổi chuỗi ngày thành kiểu DateTime
+<<<<<<< HEAD
+=======
 
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
                 DateTime thoigianDateTime = DateTime.ParseExact(item.thoigian, "yyyy-MM-dd", CultureInfo.InvariantCulture);
                 string monthYear = thoigianDateTime.ToString("MM/yyyy");
 
@@ -124,6 +138,13 @@ namespace GUI.Admin.ThongKe
                 {
                     lblThang.Visible = true;
                     cbbThang.Visible = true;
+<<<<<<< HEAD
+                }
+                else if (selectedValue == "Theo doanh thu")
+                {
+                    lblThang.Visible = false;
+                    cbbThang.Visible = false;
+=======
 
                     
                     // Không gọi DisplayTopThreeItems ở đây
@@ -132,6 +153,7 @@ namespace GUI.Admin.ThongKe
                 else if (selectedValue == "Theo doanh thu")
                 {
                     // Thực hiện công việc khi chọn "Theo doanh thu"
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
                 }
             }
         }
@@ -140,7 +162,10 @@ namespace GUI.Admin.ThongKe
         {
             // Khi người dùng chọn một tháng từ combobox cbbThang
             // Gọi phương thức DisplayTopThreeItems với tháng đã chọn
+<<<<<<< HEAD
+=======
           
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
         }
 
         private void cbbThang_SelectedIndexChanged_1(object sender, EventArgs e)
@@ -158,4 +183,7 @@ namespace GUI.Admin.ThongKe
         }
     }
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef

@@ -59,8 +59,8 @@ namespace GUI.EMPLOYEE.TaiKhoanNhanVien
                     txtName.Text = i.Name;
                     txtAddress.Text = i.Address;
                     txtPhone.Text = i.PhoneNumber;
-                    txtNewPass.Text = i.Password.Trim();
-                    txtReNewPass.Text = i.Password.Trim();
+                    txtNewPass.Text = "";
+                    txtReNewPass.Text = "";
                     txtLoaiNhanVien.Text = i.TypeEmployee;
 
                     Image picture = null;
@@ -102,66 +102,69 @@ namespace GUI.EMPLOYEE.TaiKhoanNhanVien
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
+            // Check if the new password fields match
             if (txtNewPass.Text.Trim() != txtReNewPass.Text.Trim())
             {
                 MessageBox.Show("Mật khẩu mới không khớp, Vui lòng nhập lại!");
-
+                return;
             }
-            else
+
+            List<tb_Employee> list = _employee.GetAccountsFromTable("tb_Employee");
+            foreach (var i in list)
             {
-                List<tb_Employee> list = _employee.GetAccountsFromTable("tb_Employee");
-                foreach (var i in list)
+                if (i.EmployeeID.Trim() == _id.Trim())
                 {
-                    if (i.EmployeeID.Trim() == _id.Trim())
+                    // Hash the old password input and compare with stored hashed password
+                    if (HashCode.HashPassword(txtOldPass.Text.Trim()) != i.Password.Trim())
                     {
-                        if (i.Password.Trim() != txtOldPass.Text.Trim())
-                        {
-                            MessageBox.Show("Mật khẩu cũ không khớp, Vui lòng nhập lại!");
-                            txtOldPass.ForeColor = Color.Red;
-                            return;
-                        }
-                    }
-
-                }
-
-                try
-                {
-                    tb_Employee up = new tb_Employee();
-                    up.EmployeeID = _id;
-                    up.Name = txtName.Text;
-                    up.PhoneNumber = txtPhone.Text;
-
-                    up.Gender = (rdFemale.Checked) ? true : false;
-                    up.TypeEmployee = txtLoaiNhanVien.Text;
-                    up.BirthDate = dateTimePicker1.Value;
-                    up.Address = txtAddress.Text;
-                    up.Password = txtNewPass.Text.Trim();
-                    if(this.pcAvt.ImageLocation == null)
-                    {
-                        up.image = null;
-                    }
-                    else
-                    {
-                        up.image = convertFileToByte(this.pcAvt.ImageLocation);
-
-                    }
-                    _employee.Update(up);
-
-                    DialogResult result = MessageBox.Show("Cập nhật Khách hàng thành công!", "Thông báo", MessageBoxButtons.YesNo);
-                    if (result == DialogResult.Yes)
-                    {
-                        Hide();
-
+                        MessageBox.Show("Mật khẩu cũ không khớp, Vui lòng nhập lại!");
+                        txtOldPass.ForeColor = Color.Red;
+                        return;
                     }
                 }
-                catch (Exception ex)
+            }
+
+            try
+            {
+                tb_Employee up = new tb_Employee
                 {
-                    MessageBox.Show("Đã xảy ra lỗi trong quá trình cập nhật khách hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    EmployeeID = _id,
+                    Name = txtName.Text,
+                    PhoneNumber = txtPhone.Text,
+                    Gender = rdFemale.Checked,
+                    TypeEmployee = txtLoaiNhanVien.Text,
+                    BirthDate = dateTimePicker1.Value,
+                    Address = txtAddress.Text,
+                    // Retain the current password if new password fields are empty
+                    Password = string.IsNullOrWhiteSpace(txtNewPass.Text) ? list.FirstOrDefault(ee => ee.EmployeeID.Trim() == _id.Trim()).Password : HashCode.HashPassword(txtNewPass.Text.Trim())
+                };
+
+                if (this.pcAvt.ImageLocation == null)
+                {
+                    up.image = null;
                 }
+                else
+                {
+                    up.image = convertFileToByte(this.pcAvt.ImageLocation);
+                }
+
+                _employee.Update(up);
+
+                DialogResult result = MessageBox.Show("Cập nhật nhân viên thành công!", "Thông báo", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    Hide();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Đã xảy ra lỗi trong quá trình cập nhật nhân viên: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+    
+
+    private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
             {

@@ -18,7 +18,7 @@ namespace DataLayer
         public string IngredientName { get; set; }
         public Nullable<int> Number { get; set; }
         public string ProductID { get; set; }
-        public string Note { get; set; }
+        public Nullable<double> Price { get; set; }
     
         public virtual tb_Product tb_Product { get; set; }
     }

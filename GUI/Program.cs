@@ -1,4 +1,5 @@
-﻿using GUI.Admin.Nhanvien;
+﻿using BusinessLayer;
+using GUI.Admin.Nhanvien;
 using GUI.THUCDON;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,11 @@ namespace GUI
         [STAThread]
         static void Main()
         {
+            //AdminManager adminManager = new AdminManager();
+
+            //// Tạo mới Admin
+            //var newAdmin = adminManager.AddAdmin("Admin1", "Abc");
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new MainViewAdmin());

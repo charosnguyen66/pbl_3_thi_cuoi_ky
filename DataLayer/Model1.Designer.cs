@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+﻿// T4 code generation is enabled for model 'H:\ki4\pbl3\PBL33 - Copy (2) - Copy\DataLayer\Model1.edmx'. 
+=======
 ﻿// T4 code generation is enabled for model 'F:\pbl_3_thi_cuoi_ky\DataLayer\Model1.edmx'. 
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

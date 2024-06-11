@@ -34,11 +34,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
-            this.txtPass = new System.Windows.Forms.TextBox();
             this.cbbGender = new System.Windows.Forms.ComboBox();
             this.dpBirth = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
@@ -108,16 +106,6 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Địa chỉ";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(491, 267);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 20);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Mật khẩu";
-            // 
             // txtName
             // 
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -148,16 +136,6 @@
             this.txtAddress.Size = new System.Drawing.Size(229, 83);
             this.txtAddress.TabIndex = 10;
             // 
-            // txtPass
-            // 
-            this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(602, 253);
-            this.txtPass.Multiline = true;
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(229, 34);
-            this.txtPass.TabIndex = 11;
-            // 
             // cbbGender
             // 
             this.cbbGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -169,7 +147,9 @@
             // 
             // dpBirth
             // 
+            this.dpBirth.CustomFormat = "dd/MM/yyyy";
             this.dpBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dpBirth.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dpBirth.Location = new System.Drawing.Point(612, 75);
             this.dpBirth.Name = "dpBirth";
             this.dpBirth.Size = new System.Drawing.Size(177, 27);
@@ -220,11 +200,9 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dpBirth);
             this.Controls.Add(this.cbbGender);
-            this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtName);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -248,11 +226,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.ComboBox cbbGender;
         private System.Windows.Forms.DateTimePicker dpBirth;
         private System.Windows.Forms.Label label4;

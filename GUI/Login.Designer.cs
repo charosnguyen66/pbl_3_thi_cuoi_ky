@@ -204,6 +204,7 @@
             this.label3.Size = new System.Drawing.Size(124, 21);
             this.label3.TabIndex = 11;
             this.label3.Text = "Đăng ký ngay";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // Login
             // 

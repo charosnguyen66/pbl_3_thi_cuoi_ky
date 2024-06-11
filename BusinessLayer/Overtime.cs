@@ -17,16 +17,39 @@ namespace BusinessLayer
             return db.tb_OverTime.ToList();
 
         }
+        public string GetNextID()
+        {
+            var lastID = db.tb_OverTime.OrderByDescending(x => x.ID).FirstOrDefault()?.ID;
+            if (lastID == null)
+            {
+                return "T1"; // Bắt đầu từ S1 nếu chưa có ID nào
+            }
+
+            // Tách phần số và phần chữ trong ID cuối cùng
+            var numericPart = new string(lastID.SkipWhile(c => !char.IsDigit(c)).ToArray());
+            var alphaPart = new string(lastID.TakeWhile(c => !char.IsDigit(c)).ToArray());
+
+            if (int.TryParse(numericPart, out int number))
+            {
+                return $"{alphaPart}{number + 1}";
+            }
+
+            throw new InvalidOperationException("ID format is invalid");
+        }
+        public List<tb_OverTime> getList1(string employeeID)
+        {
+            return db.tb_OverTime.Where(x => x.EmployeeID == employeeID).ToList();
+        }
         public List<tb_OverTime> getList(string id)
         {
 
-            List<tb_OverTime> k =  db.tb_OverTime.ToList();
+            List<tb_OverTime> k = db.tb_OverTime.ToList();
             List<tb_OverTime> re = new List<tb_OverTime>();
 
 
-            foreach(var i in k)
+            foreach (var i in k)
             {
-                if(i.EmployeeID.Trim() == id)
+                if (i.EmployeeID.Trim() == id)
                 {
                     re.Add(i);
                 }
@@ -62,10 +85,9 @@ namespace BusinessLayer
             {
                 var _dt = db.tb_OverTime.FirstOrDefault(x => x.ID == customer.ID);
                 _dt.OvertimeDate = customer.OvertimeDate;
-                _dt.OvertimeHours = customer.OvertimeHours;
                 _dt.EmployeeID = customer.EmployeeID;
                 _dt.coeffSalary = customer.coeffSalary;
-               
+
                 db.SaveChanges();
 
                 return customer;

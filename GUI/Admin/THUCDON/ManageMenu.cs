@@ -57,11 +57,12 @@ namespace GUI
             }
             dataGridView1.Columns["Mãsảnphẩm"].Width = 0;
             dataGridView1.Columns["NgàyChỉnh"].Width = 0;
-            dataGridView1.Columns["TênSảnPhẩm"].Width = 170;
-            dataGridView1.Columns["Giá"].Width = 100; 
-            dataGridView1.Columns["NgàyThêm"].Width = 130;
-            dataGridView1.Columns["MôTả"].Width = 220; 
+            dataGridView1.Columns["TênSảnPhẩm"].Width = 220;
+            dataGridView1.Columns["Giá"].Width = 150; 
+            dataGridView1.Columns["NgàyThêm"].Width = 150;
+            dataGridView1.Columns["MôTả"].Width = 290; 
             dataGridView1.Columns["HìnhẢnh"].Width = 120;
+            dataGridView1.Columns["ThểLoại"].Width = 190;
         }
 
 

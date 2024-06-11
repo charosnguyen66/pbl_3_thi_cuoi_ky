@@ -30,13 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblFrom = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblTo = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,6 +49,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.lblMatdi = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -79,48 +76,6 @@
             this.lblName.TabIndex = 1;
             this.lblName.Text = "tên ";
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(510, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 27);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "từ ngày";
-            // 
-            // lblFrom
-            // 
-            this.lblFrom.AutoSize = true;
-            this.lblFrom.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFrom.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblFrom.Location = new System.Drawing.Point(599, 16);
-            this.lblFrom.Name = "lblFrom";
-            this.lblFrom.Size = new System.Drawing.Size(59, 27);
-            this.lblFrom.TabIndex = 3;
-            this.lblFrom.Text = "from";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(739, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 27);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "đến ngày";
-            // 
-            // lblTo
-            // 
-            this.lblTo.AutoSize = true;
-            this.lblTo.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTo.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblTo.Location = new System.Drawing.Point(845, 16);
-            this.lblTo.Name = "lblTo";
-            this.lblTo.Size = new System.Drawing.Size(32, 27);
-            this.lblTo.TabIndex = 5;
-            this.lblTo.Text = "to";
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -141,17 +96,6 @@
             this.label2.Size = new System.Drawing.Size(141, 24);
             this.label2.TabIndex = 7;
             this.label2.Text = "Chi tiết tăng ca";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 380);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 24);
-            this.label4.TabIndex = 9;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // dataGridView2
             // 
@@ -181,9 +125,9 @@
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(726, 560);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(134, 20);
+            this.label7.Size = new System.Drawing.Size(101, 20);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Số giờ làm được:";
+            this.label7.Text = "Lương cứng:";
             // 
             // txtWork
             // 
@@ -273,7 +217,7 @@
             // 
             this.lblGiatangCa.AutoSize = true;
             this.lblGiatangCa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGiatangCa.Location = new System.Drawing.Point(491, 63);
+            this.lblGiatangCa.Location = new System.Drawing.Point(511, 63);
             this.lblGiatangCa.Name = "lblGiatangCa";
             this.lblGiatangCa.Size = new System.Drawing.Size(0, 20);
             this.lblGiatangCa.TabIndex = 21;
@@ -282,7 +226,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(556, 63);
+            this.label13.Location = new System.Drawing.Point(603, 62);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(82, 20);
             this.label13.TabIndex = 22;
@@ -292,17 +236,17 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(556, 326);
+            this.label14.Location = new System.Drawing.Point(590, 324);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(82, 20);
+            this.label14.Size = new System.Drawing.Size(95, 20);
             this.label14.TabIndex = 25;
-            this.label14.Text = "nghìn/giờ)";
+            this.label14.Text = "nghìn/ngày)";
             // 
             // lblMatdi
             // 
             this.lblMatdi.AutoSize = true;
             this.lblMatdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMatdi.Location = new System.Drawing.Point(481, 327);
+            this.lblMatdi.Location = new System.Drawing.Point(501, 327);
             this.lblMatdi.Name = "lblMatdi";
             this.lblMatdi.Size = new System.Drawing.Size(0, 20);
             this.lblMatdi.TabIndex = 24;
@@ -317,11 +261,31 @@
             this.label16.TabIndex = 23;
             this.label16.Text = "(Mỗi ngày nghĩ nhân viên sẽ mất đi: ";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(510, 13);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 27);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "tháng";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CustomFormat = "MM/yyyy";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(594, 16);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.TabIndex = 26;
+            // 
             // SalaryDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1112, 761);
+            this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.lblMatdi);
             this.Controls.Add(this.label16);
@@ -338,19 +302,16 @@
             this.Controls.Add(this.txtWork);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.lblTo);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.lblFrom);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "SalaryDetailForm";
             this.Text = "Chi tiết lương";
+            this.Load += new System.EventHandler(this.SalaryDetailForm_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
@@ -362,13 +323,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblFrom;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblTo;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
@@ -386,5 +342,7 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lblMatdi;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

@@ -31,6 +31,9 @@ H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyCo
 H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.dll
 H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\obj\Debug\BusinessLayer.pdb
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef
 H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.dll
 H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.WinForms.dll
 H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.Wpf.dll
@@ -40,6 +43,33 @@ H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.WinForms.pdb
 H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.WinForms.xml
 H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.Wpf.pdb
 H:\ki4\pbl3\PBL33 - Copy (2)\BusinessLayer\bin\Debug\LiveCharts.Wpf.xml
+<<<<<<< HEAD
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\BusinessLayer.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\BusinessLayer.pdb
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\DataLayer.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\EntityFramework.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\FontAwesome.Sharp.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\LiveCharts.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\LiveCharts.WinForms.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\LiveCharts.Wpf.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\DataLayer.pdb
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\DataLayer.dll.config
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\EntityFramework.xml
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\LiveCharts.pdb
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\LiveCharts.xml
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\LiveCharts.WinForms.pdb
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\LiveCharts.WinForms.xml
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\LiveCharts.Wpf.pdb
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\bin\Debug\LiveCharts.Wpf.xml
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\obj\Debug\BusinessLayer.csproj.CopyComplete
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\obj\Debug\BusinessLayer.dll
+H:\ki4\pbl3\PBL33 - Copy (2) - Copy\BusinessLayer\obj\Debug\BusinessLayer.pdb
+=======
 =======
 <<<<<<< HEAD
 F:\pbl_3_thi_cuoi_ky\BusinessLayer\bin\Debug\BusinessLayer.dll.config
@@ -77,3 +107,4 @@ F:\pbl_truc\pbl_3_thi_cuoi_ky\BusinessLayer\obj\Debug\BusinessLayer.dll
 F:\pbl_truc\pbl_3_thi_cuoi_ky\BusinessLayer\obj\Debug\BusinessLayer.pdb
 >>>>>>> 46a6e00990b4aa41df934776910e83ec20209f87
 >>>>>>> ad55cb5d6d7510782e23653ebdce63afe2786ff0
+>>>>>>> 64de7580e291ace885cd111372303e1c5a33b3ef

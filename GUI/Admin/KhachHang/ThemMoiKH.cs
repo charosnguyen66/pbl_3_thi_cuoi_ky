@@ -41,7 +41,8 @@ namespace GUI.Admin.Customer
                 {
                     randomNumbers += random.Next(0, 10);
                 }
-                product.CustomerID = "KH" + randomNumbers;
+                string uu = "KH" + randomNumbers;
+                product.CustomerID = uu;
                 product.Name = txtName.Text;
                 product.PhoneNumber = txtPhone.Text;
                 product.Gender = (cbbGender.SelectedItem.ToString() == "Nam") ? false : true;
@@ -50,11 +51,11 @@ namespace GUI.Admin.Customer
 
                 product.Address = txtAddress.Text;
                 product.RewardPoints = 0;
-                product.Password = HashCode.HashPassword( txtPass.Text);
+                product.Password = HashCode.HashPassword( uu);
 
                 _customer.AddNew(product);
                 DialogResult result = MessageBox.Show("Thêm tài khoản thành công! " +
-                    "Tên đăng nhập là: "+product.CustomerID+ "Mật khẩu là: "+txtPass.Text +
+                    "Tên đăng nhập là: "+product.CustomerID+ "Mật khẩu là: "+uu +
                     "Bạn muốn quay lại trang trước không?", "Thông báo", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
